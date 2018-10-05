@@ -1,0 +1,19 @@
+{
+  "name": "popynov",
+  "version": "1.0.0",
+  "description": "PROJET POPYNOV ",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://yimingXiong@bitbucket.org/yimingXiong/popynov.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/yimingXiong/popynov#readme"
+}
