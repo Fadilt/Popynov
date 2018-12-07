@@ -1,12 +1,63 @@
 {# app/Resources/views/podcast/create.html.twig #}
-<link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
-<link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
-<link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Création d'un article</title>
+		<link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
+		<link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
+		<link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+	</head>
+	<body>
+		<div class="container">
+			<h3>Création d'un podcast</h3>
+			{{ form_start(form) }}
+				<div class="row">
+					<div class="input-field col s9 offset-3">
+						<label for="form_titrePodcast">{{ form_label(form.titrePodcast) }}</label>
+						{{ form_errors(form.titrePodcast) }}
+						{{ form_widget(form.titrePodcast, {'attr': {'class': 'validate '}}) }}
+					</div>
+					
+					<div class="input-field col s9 offset-3">
+						<label for="form_descriptionPodcast">{{ form_label(form.descriptionPodcast) }}</label>
+						{{ form_errors(form.descriptionPodcast) }}
+						{{ form_widget(form.descriptionPodcast, {'attr': {'class': 'validate materialize-textarea'}}) }}
+					</div>
 
-	{{ form_start(form) }}
-	{{ form_widget(form) }}
-	{{ form_end(form) }}
+					<div class="input-field col s9 offset-3">
+						<div class="file-field input-field">
+							<div class="btn">
+								<span>Image</span>
+								<input type="file" multiple>
+							</div>
+							<div class="file-path-wrapper">
+								<input class="file-path validate" type="text" placeholder="Upload one or more files">
+								{{ form_errors(form.imagePodcast) }}
+								{{ form_widget(form.imagePodcast, {'attr': {'class': 'validate file-path validate', 'type': 'text'}}) }}
+							</div>
+						</div>
+					</div>
+					
+					<div class="input-field col s9 offset-3">
+						<div class="file-field input-field">
+							<div class="btn">
+								<span>Podcast</span>
+								<input type="file" multiple>
+							</div>
+							<div class="file-path-wrapper">
+								<input class="file-path validate" type="text" placeholder="Upload one or more files">
+								{{ form_errors(form.urlPodcast) }}
+								{{ form_widget(form.urlPodcast, {'attr': {'class': 'validate file-path validate', 'type': 'text'}}) }}
+							</div>
+						</div>
+					</div>
 
-<script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
-<script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
-<script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
+				</div>
+			{{ form_end(form) }}
+		</div>
+	</body>
+	<script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
+</html>

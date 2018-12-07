@@ -5,3 +5,9 @@
 .idea/php.xml
 var/
 web/bundle/framework/
+app/.DS_Store
+.idea/workspace.xml
+app/.DS_Store
+app/Resources/.DS_Store
+app/Resources/views/.DS_Store
+var/logs/dev.log

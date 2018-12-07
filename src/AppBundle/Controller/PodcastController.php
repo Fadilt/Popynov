@@ -51,7 +51,7 @@ class PodcastController extends Controller
             ->add('urlPodcast', FileType::class, array(
                     'data_class' => null,
                     'label' => 'Uploader le podcast ',
-                    'required' => true
+                    'required' => true,
                 )
             )
             ->add('save', SubmitType::class, array(
@@ -66,20 +66,31 @@ class PodcastController extends Controller
             $form->getData();
             // but, the original `$task` variable has also been updated
             $podcast = $form->getData();
-            $file = $podcast->getUrlPodcast();
 
+            $file = $podcast->getImagePodcast();
             $fileName = md5(uniqid()).'.'.$file->guessExtension();
+
+            $file->move(
+                $this->getParameter('image_directory'), $fileName
+            );
+
+            $podcastFile = $podcast->getUrlPodcast();
+            $podcastName = md5(uniqid()).'.'.$podcastFile->guessExtension();
+
+            $podcastFile->move(
+                $this->getParameter('podcast_directory'), $podcastName
+            );
 
             // Move the file to the directory where brochures are stored
 
-
             setlocale(LC_TIME, "fr_FR");
 
-            $podcast->setDatecreationPodcast(new \DateTime(date('d-m-Y h:i:s')));
-            $podcast->setDatemodifPodcast(new \DateTime(date('d-m-Y h:i:s')));
+            $podcast->setDatecreationPodcast(new \DateTime(date('d-m-Y h:i:s'))); //ajoute la date de création
+            $podcast->setDatemodifPodcast(new \DateTime(date('d-m-Y h:i:s'))); // ajoute la date de modif
 
-            // ... perform some action, such as saving the task to the database
-            // for example, if Task is a Doctrine entity, save it!
+            $podcast->setImagePodcast($fileName); // ajoute l'image du podcast
+            $podcast->setUrlPodcast($podcastName); // ajoute le podcast
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($podcast);
             $entityManager->flush();
