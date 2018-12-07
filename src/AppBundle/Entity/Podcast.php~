@@ -1,0 +1,68 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Podcast
+ *
+ * @ORM\Table(name="podcast")
+ * @ORM\Entity
+ */
+class Podcast
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titre_podcast", type="string", length=255, nullable=false)
+     */
+    private $titrePodcast;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_podcast", type="text", length=65535, nullable=false)
+     */
+    private $descriptionPodcast;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image_podcast", type="string", length=255, nullable=false)
+     */
+    private $imagePodcast;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datecreation_podcast", type="datetime", nullable=false)
+     */
+    private $datecreationPodcast;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datemodif_podcast", type="datetime", nullable=false)
+     */
+    private $datemodifPodcast;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url_podcast", type="string", length=255, nullable=false)
+     */
+    private $urlPodcast;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_podcast", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPodcast;
+
+
+}
+

@@ -109,9 +109,22 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        // app_lucky_number
-        if ($pathinfo === '/lucky/number') {
-            return array (  '_controller' => 'AppBundle\\Controller\\LuckyController::numberAction',  '_route' => 'app_lucky_number',);
+        if (0 === strpos($pathinfo, '/podcast')) {
+            // app_podcast_createpodcast
+            if ($pathinfo === '/podcast/create') {
+                return array (  '_controller' => 'AppBundle\\Controller\\PodcastController::createPodcast',  '_route' => 'app_podcast_createpodcast',);
+            }
+
+            // app_podcast_viewpodcast
+            if ($pathinfo === '/podcast/view') {
+                return array (  '_controller' => 'AppBundle\\Controller\\PodcastController::viewPodcast',  '_route' => 'app_podcast_viewpodcast',);
+            }
+
+            // podcast_creation
+            if ($pathinfo === '/podcast/create') {
+                return array (  '_controller' => 'AppBundle\\Controller\\PodcastController::createAction',  '_route' => 'podcast_creation',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

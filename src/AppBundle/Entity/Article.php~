@@ -1,0 +1,61 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Article
+ *
+ * @ORM\Table(name="article")
+ * @ORM\Entity
+ */
+class Article
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="img_article", type="string", length=255, nullable=false)
+     */
+    private $imgArticle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_article", type="string", length=255, nullable=false)
+     */
+    private $nomArticle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contenu_article", type="text", length=65535, nullable=false)
+     */
+    private $contenuArticle;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datecreation_article", type="datetime", nullable=false)
+     */
+    private $datecreationArticle;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datemodif_article", type="datetime", nullable=false)
+     */
+    private $datemodifArticle;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_article", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idArticle;
+
+
+}
+

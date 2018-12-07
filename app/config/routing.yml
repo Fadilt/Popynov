@@ -1,3 +1,7 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+podcast_creation:
+    path:      /podcast/create
+    defaults:  { _controller: AppBundle:Podcast:create }

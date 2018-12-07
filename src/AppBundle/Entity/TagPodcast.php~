@@ -1,0 +1,46 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TagPodcast
+ *
+ * @ORM\Table(name="tag_podcast", uniqueConstraints={@ORM\UniqueConstraint(name="id_podcast", columns={"id_podcast"}), @ORM\UniqueConstraint(name="id_tag", columns={"id_tag"})})
+ * @ORM\Entity
+ */
+class TagPodcast
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_tp", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idTp;
+
+    /**
+     * @var \AppBundle\Entity\Tag
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Tag")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_tag", referencedColumnName="id_tag")
+     * })
+     */
+    private $idTag;
+
+    /**
+     * @var \AppBundle\Entity\Podcast
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Podcast")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_podcast", referencedColumnName="id_podcast")
+     * })
+     */
+    private $idPodcast;
+
+
+}
+

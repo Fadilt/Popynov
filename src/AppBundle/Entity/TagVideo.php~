@@ -1,0 +1,46 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TagVideo
+ *
+ * @ORM\Table(name="tag_video", indexes={@ORM\Index(name="id_video", columns={"id_video"}), @ORM\Index(name="id_tag", columns={"id_tag"})})
+ * @ORM\Entity
+ */
+class TagVideo
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_tv", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idTv;
+
+    /**
+     * @var \AppBundle\Entity\Tag
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Tag")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_tag", referencedColumnName="id_tag")
+     * })
+     */
+    private $idTag;
+
+    /**
+     * @var \AppBundle\Entity\Video
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Video")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_video", referencedColumnName="id_video")
+     * })
+     */
+    private $idVideo;
+
+
+}
+
