@@ -8,6 +8,7 @@ imports:
 parameters:
     locale: en
     podcast_directory: '%kernel.root_dir%/../web/uploads/podcast'
+    image_directory: '%kernel.root_dir%/../web/uploads/image'
 
 framework:
     #esi:             ~
@@ -68,9 +69,3 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
-
-assetic:
-    debug:          '%kernel.debug%'
-    use_controller: '%kernel.debug%'
-    filters:
-        cssrewrite: ~

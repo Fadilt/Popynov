@@ -48,14 +48,6 @@ class PodcastController extends Controller
                     'required' => true,
                 )
             )
-            ->add('datecreationPodcast', DateTimeType::class, array(
-                'placeholder' => 'Select a value',
-                'date_format' => 'yyyy-MM-dd HH:mm',
-            ))
-            ->add('datemodifPodcast', DateTimeType::class, array(
-                'placeholder' => 'Select a value',
-                'date_format' => 'yyyy-MM-dd HH:mm'
-            ))
             ->add('urlPodcast', FileType::class, array(
                     'data_class' => null,
                     'label' => 'Uploader le podcast ',
@@ -74,18 +66,17 @@ class PodcastController extends Controller
             $form->getData();
             // but, the original `$task` variable has also been updated
             $podcast = $form->getData();
-            //$file = $podcast->getUrlPodcast();
+            $file = $podcast->getUrlPodcast();
 
-            //$fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
 
             // Move the file to the directory where brochures are stored
 
 
             setlocale(LC_TIME, "fr_FR");
 
-            //$podcast->setBrochure($fileName);
-            //$podcast->setDatecreationPodcast(date('d-m-Y h:i:s'));
-            //$podcast->setDatemodifPodcast(date('d-m-Y h:i:s'));
+            $podcast->setDatecreationPodcast(new \DateTime(date('d-m-Y h:i:s')));
+            $podcast->setDatemodifPodcast(new \DateTime(date('d-m-Y h:i:s')));
 
             // ... perform some action, such as saving the task to the database
             // for example, if Task is a Doctrine entity, save it!
