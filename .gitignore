@@ -11,3 +11,6 @@ app/.DS_Store
 app/Resources/.DS_Store
 app/Resources/views/.DS_Store
 var/logs/dev.log
+.idea/workspace.xml
+web/uploads/image
+web/uploads/podcast

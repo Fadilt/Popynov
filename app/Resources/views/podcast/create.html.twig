@@ -4,6 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Création d'un article</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
 		<link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
 		<link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
@@ -32,9 +33,9 @@
 								<input type="file" multiple>
 							</div>
 							<div class="file-path-wrapper">
-								<input class="file-path validate" type="text" placeholder="Upload one or more files">
+								<input class="file-path validate" type="text" placeholder="Uploader une image">
 								{{ form_errors(form.imagePodcast) }}
-								{{ form_widget(form.imagePodcast, {'attr': {'class': 'validate file-path validate', 'type': 'text'}}) }}
+								{{ form_widget(form.imagePodcast, {'attr': {'class': 'validate file-path', 'type': 'text'}}) }}
 							</div>
 						</div>
 					</div>
@@ -46,13 +47,16 @@
 								<input type="file" multiple>
 							</div>
 							<div class="file-path-wrapper">
-								<input class="file-path validate" type="text" placeholder="Upload one or more files">
+								<input class="file-path validate" type="text" placeholder="Uploader un podcast">
 								{{ form_errors(form.urlPodcast) }}
-								{{ form_widget(form.urlPodcast, {'attr': {'class': 'validate file-path validate', 'type': 'text'}}) }}
+								{{ form_widget(form.urlPodcast, {'attr': {'class': 'validate file-path', 'type': 'text'}}) }}
 							</div>
 						</div>
 					</div>
-
+					
+					<div class="input-field col s9 offset-3">
+						{{ form_widget(form.save, {'attr': {'class': 'btn waves-effect waves-light'}}) }}
+					</div>
 				</div>
 			{{ form_end(form) }}
 		</div>

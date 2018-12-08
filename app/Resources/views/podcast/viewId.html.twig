@@ -1,0 +1,74 @@
+{# app/Resources/views/podcast/view.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Création d'un article</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
+		<link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
+		<link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+	</head>
+	<body>
+        <div class="parallax-container">
+            <div class="parallax"><img class="responsive-img" src="{{ asset('uploads/image/' ~ podcast.imagePodcast) }}"></div>
+        </div>
+        <div class="section white">
+            <div class="row container">
+                <audio class="col s4 offset-s4 player" style="margin-top:-90px;" controls src="{{ asset('uploads/podcast/' ~ podcast.urlPodcast) }}"></audio>
+            </div>
+            <div class="row container">
+                <div class="row">
+			        <h2 class="text-center">{{ podcast.titrePodcast }}</h2>
+                </div>
+                <div class="row">
+                    <p>{{ podcast.descriptionPodcast }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+
+            <audio id="myAudio" preload="auto">
+                <source src="{{ asset('uploads/podcast/' ~ podcast.urlPodcast) }}" type="audio/mpeg">
+            </audio>
+
+            <div class="row">
+
+                <div class="col xl3 l3 m3"></div>
+
+                <div class="col xl6 l6 m6 s12">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="img/music.png" alt="music" onClick="togglePlay()">
+                            <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" onClick="togglePlay()"><i class="material-icons" id="PausePlay">play_arrow</i></a>
+                        </div>
+                        <div class="card-content">
+                            <h5>
+                                Fun - Vibe Tracks
+                            </h5>
+                            <div class="row valign-wrapper">
+                                <div class="col s2" id="position"></div>
+                                <div class="col s6 range-field valign-wrapper"><input id="seekbar" type="range" min="0" max="0" step="1" oninput="setSeek(this.value)" onchange="setSeek(this.value)"></div>
+                                <div class="col s2 center-align" id="total"></div>
+                                <div class="col s2 center-align"><a class="" onClick="toggleMute()"><i class="material-icons teal-text lighten-1" id="Muted">volume_up</i></a></div>
+                                <div class="col s3 range-field valign-wrapper"><input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script src="js/music-player.js"></script>
+
+                </div>
+
+                <div class="col xl3 l3 m3"></div>
+
+            </div>
+
+        </div>
+		
+	</body>
+	<script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
+</html>
