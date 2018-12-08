@@ -1,0 +1,14 @@
+{# app/Resources/views/podcast/view.html.twig #}
+<link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
+<link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
+<link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+
+{% for article in articles %}
+    <li>{{ article.imgArticle }}<li>
+    <img src="{{ asset('uploads/image/' ~ article.imgArticle) }}">
+    {% endfor %}
+
+
+        <script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
+        <script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
