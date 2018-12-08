@@ -5,3 +5,7 @@ app:
 podcast_creation:
     path:      /podcast/create
     defaults:  { _controller: AppBundle:Podcast:create }
+
+podcast_view:
+    path:      /podcast/view
+    defaults:  { _controller: AppBundle:Podcast:view }

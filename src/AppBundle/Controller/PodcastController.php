@@ -95,7 +95,7 @@ class PodcastController extends Controller
             $entityManager->persist($podcast);
             $entityManager->flush();
 
-            return $this->redirectToRoute('podcast_creation');
+            return $this->redirectToRoute('podcast_view');
         }
 
         //return $this->redirectToRoute('podcast_creation');
@@ -108,15 +108,29 @@ class PodcastController extends Controller
 
     /**
      *
-     * @Route("/podcast/view")
+     * @Route("/podcast/view/all")
      */
-    public function viewPodcast(Request $request)
+    public function viewPodcast()
     {
         $repository = $this->getDoctrine()->getRepository(Podcast::class);
         $podcasts = $repository->findAll();
 
         return $this->render('podcast/view.html.twig', array(
             'podcasts' => $podcasts,
+        ));
+    }
+
+    /**
+     *
+     * @Route("/podcast/view/{id}")
+     */
+    public function viewIdPodcast($id)
+    {
+        $repository = $this->getDoctrine()->getRepository(Podcast::class);
+        $podcast = $repository->find($id);
+
+        return $this->render('podcast/viewId.html.twig', array(
+            'podcast' => $podcast,
         ));
     }
 

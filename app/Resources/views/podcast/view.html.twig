@@ -1,14 +1,81 @@
 {# app/Resources/views/podcast/view.html.twig #}
-<link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
-<link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
-<link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Création d'un article</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
+		<link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
+		<link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+			<h2>Liste des podcasts</h2>
+			{% for podcast in podcasts %}
+				{% if loop.first %}
+				<div class="row">
+					<div class="col s10 m10 l10 offset-s1 offset-m1 offset-l1">
+						<div class="card large">
+							<div class="card-image">
+								<img class="activator" src="{{ asset('uploads/image/' ~ podcast.imagePodcast) }}">
+								<span class="card-title">{{ podcast.titrePodcast }}</span>
+							</div>
+							<div class="card-content">
+								<p>{{ podcast.descriptionPodcast }}</p>
+							</div>
+							<div class="card-reveal">
+								<span class="card-title grey-text text-darken-4">{{ podcast.titrePodcast }}<i class="material-icons right">close</i></span>
+								{{ podcast.urlPodcast }}
+							</div>
+						</div>
+					</div>
+				</div>
+				{% else %}
+					{% if loop.index == 2 %}
+					<div class="carousel carousel-slider">
+						<div class="col s1 m1 l1" style="background-color:red;">
+							<div class="col s9 offset-s9">
+								test
+							</div>
+						</div>
+					{% endif %}
+					<div class="col s10 m5 l5">
+						
+						<div class="carousel">
+						<div class="card small">
+							<div class="card-image">
+								<img class="activator" src="{{ asset('uploads/image/' ~ podcast.imagePodcast) }}">
+								<span class="card-title">{{ podcast.titrePodcast }}</span>
+							</div>
+							<div class="card-content">
+								<p>{{ podcast.descriptionPodcast }}</p>
+							</div>
+							<div class="card-reveal">
+								<span class="card-title grey-text text-darken-4">{{ podcast.titrePodcast }}<i class="material-icons right">close</i></span>
+								{{ podcast.urlPodcast }}
+							</div>
+						</div>
+						</div>
+					</div>
+					{% if loop.index == 3 %}
+						<div class="col s1 m1 l1">
+							<div class="col s1">
+								test
+							</div>
+						</div>
+						</div>
+					{% endif %}
+				{% endif %}
 
-{% for podcast in podcasts %}
-	<li>{{ podcast.imagePodcast }}<li>
-	<img src="{{podcast.imagePodcast}}">
-{% endfor %}
-
-
-<script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
-<script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
-<script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
+			{% endfor %}
+				</div>
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
+</html>
