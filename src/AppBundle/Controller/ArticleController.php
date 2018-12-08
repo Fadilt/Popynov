@@ -24,7 +24,7 @@ class ArticleController extends Controller
 {
     /**
      *
-     * @Route("/article/create")
+     * @Route("/article/create", name = "article")
      */
     public function createArticle(Request $request)
     {
@@ -61,7 +61,12 @@ class ArticleController extends Controller
             // but, the original `$task` variable has also been updated
             $article = $form->getData();
 
+            $file = $article->getImgArticle();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
 
+            $file->move(
+                $this->getParameter('image_directory'), $fileName
+            );
 
 
             // Move the file to the directory where brochures are stored
@@ -72,13 +77,15 @@ class ArticleController extends Controller
             $article->setDatecreationArticle(new \DateTime(date('d-m-Y h:i:s')));
             $article->setDatemodifArticle(new \DateTime(date('d-m-Y h:i:s')));
 
+            $article->setImgArticle($fileName); // ajoute l'image de l'article
+
             // ... perform some action, such as saving the task to the database
             // for example, if Task is a Doctrine entity, save it!
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
             $entityManager->flush();
 
-            return $this->redirectToRoute('article_creation');
+            return $this->redirectToRoute('article');
         }
 
         //return $this->redirectToRoute('article_creation');
