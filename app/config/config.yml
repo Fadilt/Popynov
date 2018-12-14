@@ -8,6 +8,7 @@ imports:
 parameters:
     locale: en
     podcast_directory: '%kernel.root_dir%/../web/uploads/podcast'
+    video_directory: '%kernel.root_dir%/../web/uploads/video'
     image_directory: '%kernel.root_dir%/../web/uploads/image'
 
 framework:

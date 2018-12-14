@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Création d'un article</title>
+    <link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
+    <link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
+    <link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <h3>Création d'un article vidéo</h3>
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="input-field col s9 offset-3">
+            <label for="form_urlVideo">{{ form_label(form.titreVideo) }}</label>
+            {{ form_errors(form.titreVideo) }}
+            {{ form_widget(form.titreVideo, {'attr': {'class': 'validate '}}) }}
+        </div>
+
+        <div class="input-field col s9 offset-3">
+            <label for="form_descriptionVideo">{{ form_label(form.descriptionVideo) }}</label>
+            {{ form_errors(form.descriptionVideo) }}
+            {{ form_widget(form.descriptionVideo, {'attr': {'class': 'validate materialize-textarea'}}) }}
+        </div>
+
+        <div class="input-field col s9 offset-3">
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Vidéo</span>
+                    <input type="file" multiple>
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Upload a video">
+                    {{ form_errors(form.urlVideo) }}
+                    {{ form_widget(form.urlVideo, {'attr': {'class': 'validate file-path validate', 'type': 'text'}}) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="input-field col s9 offset-3">
+
+            {{ form_widget(form.save,{'attr': {'class': 'waves-effect waves-light btn', 'label': 'Créer l\'article vidéo'}}) }}</div>
+
+
+    </div>
+    {{ form_end(form) }}
+</div>
+</body>
+<script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
+<script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
+</html>
