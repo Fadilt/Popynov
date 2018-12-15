@@ -10,3 +10,18 @@
 .material-icons.md1:hover::before{
   content:"navigate_next"; 
 }
+
+.success_msg {
+  background-color:green;
+  color:white;
+}
+
+.error_msg {
+  color:white;
+  background-color: red;
+  margin-top: -50px;
+}
+
+.customText{
+  max-height: 300px;
+}

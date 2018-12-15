@@ -1,0 +1,129 @@
+{# app/Resources/views/podcast/create.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Création d'un article</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
+		<link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
+		<link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+	</head>
+	<body>
+		<div class="container">
+			<h3>Modification d'un podcast</h3>
+			{{ form_start(form) }}
+				<div class="row">
+					<div class="input-field col s9 offset-3">
+						<label for="form_titrePodcast">{{ form_label(form.titrePodcast) }}</label>
+						{{ form_errors(form.titrePodcast) }}
+						{{ form_widget(form.titrePodcast, {'attr': {'class': 'validate '}}) }}
+					</div>
+					
+					<div class="input-field col s9 offset-3">
+						<label for="form_descriptionPodcast">{{ form_label(form.descriptionPodcast) }}</label>
+						{{ form_errors(form.descriptionPodcast) }}
+						{{ form_widget(form.descriptionPodcast, {'attr': {'class': 'validate materialize-textarea customText', 'style': 'overflow:auto;' }}) }}
+					</div>
+
+					<div class="input-field col s9 offset-3">
+                        <img class="responsive-img modifyImage" src="{{ asset('uploads/image/' ~ podcast.imagePodcast) }}">
+						<div class="file-field input-field" style="margin-top:40px;">
+							<div class="btn">
+								<span>Image</span>
+								<input type="file" multiple>
+							</div>
+							<div class="file-path-wrapper">
+								<input class="file-path validate" name="imagePodcast" type="text" placeholder="Uploader une image">
+								{{ form_errors(form.imagePodcast) }}
+								{{ form_widget(form.imagePodcast, {'attr': {'class': 'validate file-path', 'type': 'text', 'onChange': 'readURL(this);event.preventDefault();'}}) }}
+							</div>
+						</div>
+					</div>
+					
+					<div class="input-field col s9 offset-3">
+                        
+                        <div class="section podcast_audio">
+
+                            <audio id="myAudio" preload="auto">
+                                <source  src="{{ asset('uploads/podcast/' ~ podcast.urlPodcast) }}" type="audio/mp3">
+                            </audio>
+
+                            <div class="row">
+                                <div class="col xl3 l3 m3"></div>
+                                <div class="col xl6 l6 m6 s12">
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <div class="row valign-wrapper">
+                                                <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" style="left:0px!important;" onClick="togglePlay()"><i class="material-icons" id="PausePlay">play_arrow</i></a>
+                                                <div class="col s2" id="position"></div>
+                                                <div class="col s6 range-field valign-wrapper"><input id="seekbar" type="range" min="0" max="0" step="1" oninput="setSeek(this.value)" onchange="setSeek(this.value)"></div>
+                                                <div class="col s2 center-align" id="total"></div>
+                                                <div class="col s2 center-align"><a class="" onClick="toggleMute()"><i class="material-icons teal-text lighten-1" id="Muted">volume_up</i></a></div>
+                                                <div class="col s3 range-field valign-wrapper"><input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col xl3 l3 m3"></div>
+                            </div>
+                            
+                        </div>
+                        
+						<div class="file-field input-field">
+							<div class="btn">
+								<span>Podcast</span>
+								<input type="file" multiple>
+							</div>
+
+							<div class="file-path-wrapper">
+								<input class="file-path validate" type="text" placeholder="Uploader un podcast">
+								{{ form_errors(form.urlPodcast) }}
+								{{ form_widget(form.urlPodcast, {'attr': {'class': 'validate file-path', 'type': 'text', 'onChange': 'event.stopPropagation();changePodcast(this);'}}) }}
+							</div>
+						</div>
+					</div>
+					
+					<div class="input-field col s9 offset-3">
+						{{ form_widget(form.save, {'attr': {'class': 'btn waves-effect waves-light'}}) }}
+					</div>
+				</div>
+			{{ form_end(form) }}
+		</div>
+	</body>
+	<script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.modifyImage')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        
+        function changePodcast(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('.podcast_audio').empty();
+                    //$('.podcast_audio').append('<source  src="'+ e.target.result +'" type="audio/mp3">');
+                    $('.podcast_audio').append('<audio id="myAudio" controls preload="auto">'
+                    + '<source  src="'+ e.target.result +'" type="audio/mp3">'
+                    + '</audio>');
+
+                    //.attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+    <script type="text/javascript" src="{{asset('assets/music-player.js') }}"></script>
+</html>

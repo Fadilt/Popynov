@@ -7,5 +7,12 @@ podcast_creation:
     defaults:  { _controller: AppBundle:Podcast:create }
 
 podcast_view:
-    path:      /podcast/view
+    path:      /podcast/view/all
     defaults:  { _controller: AppBundle:Podcast:view }
+
+podcast_update:
+  path:      /podcast/update/{id}
+  defaults:  { _controller: AppBundle:Podcast:update }
+
+  path:      /podcast/view/{id}
+  defaults:  { _controller: AppBundle:Podcast:viewId }

@@ -13,6 +13,7 @@
 		<div class="container">
 			<div class="row">
 			<h2>Liste des podcasts</h2>
+			
 			{% for podcast in podcasts %}
 				{% if loop.first %}
 				<div class="row">
@@ -32,18 +33,21 @@
 						</div>
 					</div>
 				</div>
-				{% else %}
-					{% if loop.index == 2 %}
+				{% endif %}
+			{% endfor %}
+
+			<div class="carousel carousel-slider center">
+			{% for podcast in podcasts %}
+					<!--{% if loop.index == 2 %}
 					<div class="carousel carousel-slider">
 						<div class="col s1 m1 l1" style="background-color:red;">
 							<div class="col s9 offset-s9">
 								test
 							</div>
 						</div>
-					{% endif %}
-					<div class="col s10 m5 l5">
+					{% endif %} -->
+					<a class="carousel-item" href="#{{ loop.index }}">
 						
-						<div class="carousel">
 						<div class="card small">
 							<div class="card-image">
 								<img class="activator" src="{{ asset('uploads/image/' ~ podcast.imagePodcast) }}">
@@ -57,25 +61,38 @@
 								{{ podcast.urlPodcast }}
 							</div>
 						</div>
-						</div>
-					</div>
-					{% if loop.index == 3 %}
+					</a>
+					<!--{% if loop.index == 3 %}
 						<div class="col s1 m1 l1">
 							<div class="col s1">
 								test
 							</div>
 						</div>
 						</div>
-					{% endif %}
-				{% endif %}
+					{% endif %}-->
 
 			{% endfor %}
+			</div>
 				</div>
 			</div>
 		</div>
-		
+				
 	</body>
 	<script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
 	<script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
 	<script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
+
+	{% set error_msg = app.session.flashbag.get('error') %}
+	{% if error_msg is not empty %}
+		{% for error in error_msg %}
+			<script>M.toast({html: "<span style='font-size: 20px;'>Erreur </span> : {{ error }}" , classes: 'error_msg'});</script>
+		{% endfor %}
+	{% endif %}
+
+	{% set success_msg = app.session.flashbag.get('success') %}
+	{% if success_msg is not empty %}
+		{% for success in success_msg %}
+			<script>M.toast({html: "{{ success }}" , classes: 'rounded success_msg'});</script>
+		{% endfor %}
+	{% endif %}
 </html>
