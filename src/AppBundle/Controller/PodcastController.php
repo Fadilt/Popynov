@@ -91,7 +91,7 @@ class PodcastController extends Controller
             $podcast->setImagePodcast($fileName); // ajoute l'image du podcast
             $podcast->setUrlPodcast($podcastName); // ajoute le podcast
 
-            $entityManager = $this->getDoctrine()->getManager();    
+            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($podcast);
             $entityManager->flush();
 

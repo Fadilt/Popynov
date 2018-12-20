@@ -1,3 +1,4 @@
+{# app/Resources/views/article/create.html.twig #}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,38 +10,38 @@
 </head>
 <body>
 <div class="container">
-    <h3>Création d'un article vidéo</h3>
+    <h3>Création d'un article</h3>
     {{ form_start(form) }}
     <div class="row">
         <div class="input-field col s9 offset-3">
-            <label for="form_urlVideo">{{ form_label(form.titreVideo) }}</label>
-            {{ form_errors(form.titreVideo) }}
-            {{ form_widget(form.titreVideo, {'attr': {'class': 'validate '}}) }}
+            <label for="form_nomArticle">{{ form_label(form.nomArticle) }}</label>
+            {{ form_errors(form.nomArticle) }}
+            {{ form_widget(form.nomArticle, {'attr': {'class': 'validate '}}) }}
         </div>
 
         <div class="input-field col s9 offset-3">
-            <label for="form_descriptionVideo">{{ form_label(form.descriptionVideo) }}</label>
-            {{ form_errors(form.descriptionVideo) }}
-            {{ form_widget(form.descriptionVideo, {'attr': {'class': 'validate materialize-textarea'}}) }}
+            <label for="form_contenuArticle">{{ form_label(form.contenuArticle) }}</label>
+            {{ form_errors(form.contenuArticle) }}
+            {{ form_widget(form.contenuArticle, {'attr': {'class': 'validate materialize-textarea'}}) }}
         </div>
 
         <div class="input-field col s9 offset-3">
             <div class="file-field input-field">
                 <div class="btn">
-                    <span>Vidéo</span>
+                    <span>Image</span>
                     <input type="file" multiple>
                 </div>
                 <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" placeholder="Upload a video">
-                    {{ form_errors(form.urlVideo) }}
-                    {{ form_widget(form.urlVideo, {'attr': {'class': 'validate file-path validate', 'type': 'text'}}) }}
+                    <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                    {{ form_errors(form.imgArticle) }}
+                    {{ form_widget(form.imgArticle, {'attr': {'class': 'validate file-path validate', 'type': 'text'}}) }}
                 </div>
             </div>
         </div>
 
         <div class="input-field col s9 offset-3">
 
-            {{ form_widget(form.save,{'attr': {'class': 'waves-effect waves-light btn', 'label': 'Créer l\'article vidéo'}}) }}</div>
+            {{ form_widget(form.save,{'attr': {'class': 'waves-effect waves-light btn', 'label': 'Créer l\'article'}}) }}</div>
 
 
     </div>

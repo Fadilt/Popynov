@@ -14,5 +14,6 @@ podcast_update:
   path:      /podcast/update/{id}
   defaults:  { _controller: AppBundle:Podcast:update }
 
+podcast_viewId:
   path:      /podcast/view/{id}
   defaults:  { _controller: AppBundle:Podcast:viewId }
