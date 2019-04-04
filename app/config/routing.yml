@@ -7,7 +7,7 @@ podcast_creation:
     defaults:  { _controller: AppBundle:Podcast:create }
 
 podcast_view:
-    path:      /podcast/view/all
+    path:      /podcasts/view
     defaults:  { _controller: AppBundle:Podcast:view }
 
 podcast_update:
@@ -16,4 +16,20 @@ podcast_update:
 
 podcast_viewId:
   path:      /podcast/view/{id}
-  defaults:  { _controller: AppBundle:Podcast:viewId }
+  defaults:  { _controller: AppBundle:Article:viewId }
+
+article_creation:
+  path:      /article/create
+  defaults:  { _controller: AppBundle:Article:create }
+
+article_view:
+  path:      /articles/view
+  defaults:  { _controller: AppBundle:Article:view }
+
+article_update:
+  path:      /article/update/{id}
+  defaults:  { _controller: AppBundle:Article:update }
+
+article_viewId:
+  path:      /article/view/{id}
+  defaults:  { _controller: AppBundle:Article:viewId }

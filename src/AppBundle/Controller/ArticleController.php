@@ -85,11 +85,8 @@ class ArticleController extends Controller
             $entityManager->persist($article);
             $entityManager->flush();
 
-            return $this->redirectToRoute('article');
+            return $this->redirectToRoute('article_view');
         }
-
-        //return $this->redirectToRoute('article_creation');
-
 
         return $this->render('article/create.html.twig', array(
             'form' => $form->createView(),
@@ -98,7 +95,7 @@ class ArticleController extends Controller
 
     /**
      *
-     * @Route("/article/view")
+     * @Route("/articles/view")
      */
     public function viewArticle(Request $request)
     {
@@ -108,6 +105,21 @@ class ArticleController extends Controller
         return $this->render('article/view.html.twig', array(
             'articles' => $articles,
         ));
+    }
+
+    /**
+     *
+     * @Route("/article/view/{id}")
+     */
+    public function viewIdArticle($id)
+    {
+        $repository = $this->getDoctrine()->getRepository(Article::class);
+        $article = $repository->find($id);
+
+        return $this->render('article/viewId.html.twig', array(
+            'article' => $article,
+        ));
+
     }
 
 }

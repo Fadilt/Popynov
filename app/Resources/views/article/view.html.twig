@@ -1,14 +1,89 @@
 {# app/Resources/views/podcast/view.html.twig #}
-<link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
-<link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
-<link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Création d'un article</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
+    <link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
+    <link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h2>Liste des podcasts</h2>
 
-{% for article in articles %}
-    <li>{{ article.imgArticle }}<li>
-    <img src="{{ asset('uploads/image/' ~ article.imgArticle) }}">
+        {% for article in articles %}
+            {% if loop.first %}
+                <div class="row">
+                    <div class="col s10 m10 l10 offset-s1 offset-m1 offset-l1">
+                        <div class="card large">
+                            <div class="card-image">
+                                <img class="activator" src="{{ asset('uploads/image/' ~ article.imgArticle) }}">
+                                <span class="card-title">{{ article.nomArticle }}</span>
+                            </div>
+                            <div class="card-content">
+                                <p>{{ article.contenuArticle }}</p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">{{ article.nomArticle }}<i class="material-icons right">close</i></span>
+                                {{ article.contenuArticle }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <div class="row">
+            {% for article in articles %}
+                {% if loop.index > 1 %}
+
+                    <div class="carousel carousel-slider center offset-m1 col m2">
+
+                        <a class="carousel-item" href="#{{ loop.index }}">
+
+                            <div class="card small">
+                                <div class="card-image">
+                                    <img class="activator" src="{{ asset('uploads/image/' ~ article.imgArticle) }}">
+                                    <span class="card-title">{{ article.nomArticle }}</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>{{ article.contenuArticle }}</p>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">{{ article.nomArticle }}<i class="material-icons right">close</i></span>
+                                    {{ article.nomArticle }}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+</div>
+
+</body>
+<script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
+<script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
+
+{% set error_msg = app.session.flashbag.get('error') %}
+{% if error_msg is not empty %}
+    {% for error in error_msg %}
+        <script>M.toast({html: "<span style='font-size: 20px;'>Erreur </span> : {{ error }}" , classes: 'error_msg'});</script>
     {% endfor %}
+{% endif %}
 
-
-        <script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
-        <script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
-        <script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
+{% set success_msg = app.session.flashbag.get('success') %}
+{% if success_msg is not empty %}
+    {% for success in success_msg %}
+        <script>M.toast({html: "{{ success }}" , classes: 'rounded success_msg'});</script>
+    {% endfor %}
+{% endif %}
+</html>

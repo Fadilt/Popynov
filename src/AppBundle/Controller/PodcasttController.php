@@ -21,7 +21,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\HttpFoundation\File\File;
 
-class PodcastController extends Controller
+class PodcasttController extends Controller
 {
     /**
      *
@@ -105,7 +105,7 @@ class PodcastController extends Controller
 
     /**
      *
-     * @Route("/podcast/view/all")
+     * @Route("/podcasts/view")
      */
     public function viewPodcast()
     {
@@ -144,6 +144,8 @@ class PodcastController extends Controller
         if(!$post) {
             throw $this->createNotFoundException('Impossible de trouver ce podcast');
         }
+        $imagePodcastOriginal = $post->getImagePodcast();
+        $urlPodcastOriginal = $post->getUrlPodcast();
         $fileImage = new File($this->getParameter('image_directory') . '/' . $post->getImagePodcast());
         $fileUrl = new File($this->getParameter('podcast_directory') . '/' . $post->getUrlPodcast());
 
@@ -151,34 +153,33 @@ class PodcastController extends Controller
         $post->setDescriptionPodcast($post->getDescriptionPodcast());
         $post->setImagePodcast($fileImage);
         $post->setUrlPodcast($fileUrl);
-        $imagePodcastOriginal = $post->getImagePodcast();
-        $urlPodcastOriginal = $post->getUrlPodcast();
+
         $form = $this->createFormBuilder($post)
-        ->add('titrePodcast', TextType::class, array(
-                'label' => 'Ajouter un titre ',
-                'required' => true,
+            ->add('titrePodcast', TextType::class, array(
+                    'label' => 'Ajouter un titre ',
+                    'required' => true,
+                )
             )
-        )
-        ->add('descriptionPodcast', TextareaType::class, array(
-                'label' => 'Description du podcast',
-                'required' => true,
+            ->add('descriptionPodcast', TextareaType::class, array(
+                    'label' => 'Description du podcast',
+                    'required' => true,
+                )
             )
-        )
-        ->add('imagePodcast', FileType::class, array(
-                'label' => 'Ajouter une image ',
-                'required' => false,
+            ->add('imagePodcast', FileType::class, array(
+                    'label' => 'Ajouter une image ',
+                    'required' => false,
+                )
             )
-        )
-        ->add('urlPodcast', FileType::class, array(
-                'label' => 'Uploader le podcast ',
-                'required' => false,
+            ->add('urlPodcast', FileType::class, array(
+                    'label' => 'Uploader le podcast ',
+                    'required' => false,
+                )
             )
-        )
-        ->add('save', SubmitType::class, array(
-                'label' => 'Enregistrer les modifications',
+            ->add('save', SubmitType::class, array(
+                    'label' => 'Enregistrer les modifications',
+                )
             )
-        )
-        ->getForm();
+            ->getForm();
 
         $form->handleRequest($request);
 
@@ -195,18 +196,20 @@ class PodcastController extends Controller
                 $file->move(
                     $this->getParameter('image_directory'), $fileName
                 );
-                $post->setImagePodcast($imagePodcast);
+                $post->setImagePodcast($fileName);
             }
 
             if($form['urlPodcast']->getData() && $form['urlPodcast']->getData() != null){
                 $urlPodcast = $form['urlPodcast']->getData();
-                $podcastFile = $urlPodcast;
-                $podcastName = md5(uniqid()).'.'.$podcastFile->guessExtension();
+                if($urlPodcast != "" && $urlPodcast != null && $urlPodcast){
+                    $podcastFile = $urlPodcast;
+                    $podcastName = md5(uniqid()).'.'.$podcastFile->guessExtension();
 
-                $podcastFile->move(
-                    $this->getParameter('podcast_directory'), $podcastName
-                );
-                $post->setUrlPodcast($podcastName);
+                    $podcastFile->move(
+                        $this->getParameter('podcast_directory'), $podcastName
+                    );
+                    $post->setUrlPodcast($podcastName);
+                }
             }
 
             $post->setTitrePodcast($titrePodcast);
@@ -220,6 +223,8 @@ class PodcastController extends Controller
 
         return $this->render('podcast/update.html.twig', array(
             'form' => $form->createView(),
+            'fileImage' => $imagePodcastOriginal,
+            'urlPodcast' => $urlPodcastOriginal,
             'podcast' => $viewPodcast,
         ));
 

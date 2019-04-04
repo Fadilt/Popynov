@@ -27,14 +27,14 @@
 					</div>
 
 					<div class="input-field col s9 offset-3">
-                        <img class="responsive-img modifyImage" src="{{ asset('uploads/image/' ~ podcast.imagePodcast) }}">
+                        <img class="responsive-img modifyImage" src="{{ asset('uploads/image/' ~ fileImage) }}">
 						<div class="file-field input-field" style="margin-top:40px;">
 							<div class="btn">
 								<span>Image</span>
 								<input type="file" multiple>
 							</div>
 							<div class="file-path-wrapper">
-								<input class="file-path validate" name="imagePodcast" type="text" placeholder="Uploader une image">
+								<input class="file-path validate" name="imagePodcast" value="{{ fileImage }}" type="text" placeholder="Uploader une image">
 								{{ form_errors(form.imagePodcast) }}
 								{{ form_widget(form.imagePodcast, {'attr': {'class': 'validate file-path', 'type': 'text', 'onChange': 'readURL(this);event.preventDefault();'}}) }}
 							</div>
@@ -46,7 +46,7 @@
                         <div class="section podcast_audio">
 
                             <audio id="myAudio" preload="auto">
-                                <source  src="{{ asset('uploads/podcast/' ~ podcast.urlPodcast) }}" type="audio/mp3">
+                                <source  src="{{ asset('uploads/podcast/' ~ urlPodcast) }}" type="audio/mp3">
                             </audio>
 
                             <div class="row">
@@ -77,7 +77,7 @@
 							</div>
 
 							<div class="file-path-wrapper">
-								<input class="file-path validate" type="text" placeholder="Uploader un podcast">
+								<input class="file-path validate" type="text" value="{{ urlPodcast }}" placeholder="Uploader un podcast">
 								{{ form_errors(form.urlPodcast) }}
 								{{ form_widget(form.urlPodcast, {'attr': {'class': 'validate file-path', 'type': 'text', 'onChange': 'event.stopPropagation();changePodcast(this);'}}) }}
 							</div>
