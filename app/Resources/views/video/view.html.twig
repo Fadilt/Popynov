@@ -1,0 +1,96 @@
+{# app/Resources/views/podcast/view.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Création d'un article</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
+    <link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
+    <link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h2>Liste des vidéos</h2>
+
+        {% for video in videos %}
+            {% if loop.first %}
+                <div class="row">
+                    <div class="col s10 m10 l10 offset-s1 offset-m1 offset-l1">
+                        <div class="card large">
+                            <div class="card-image">
+                                <span class="card-title">{{ video.titreVideo }}</span>
+                            </div>
+                            <div class="card-content">
+                                <p>{{ video.descriptionVideo }}</p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">{{ video.titreVideo }}<i class="material-icons right">close</i></span>
+                                {{ video.urlVideo }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <div class="carousel carousel-slider center">
+            {% for video in videos %}
+                <!--{% if loop.index == 2 %}
+					<div class="carousel carousel-slider">
+						<div class="col s1 m1 l1" style="background-color:red;">
+							<div class="col s9 offset-s9">
+								test
+							</div>
+						</div>
+					{% endif %} -->
+                <a class="carousel-item" href="#{{ loop.index }}">
+
+                    <div class="card small">
+                        <div class="card-image">
+                            <span class="card-title">{{ video.titreVideo }}</span>
+                        </div>
+                        <div class="card-content">
+                            <p>{{ video.descriptionVideo }}</p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">{{ video.titreVideo }}<i class="material-icons right">close</i></span>
+                            {{ video.urlVideo }}
+                        </div>
+                    </div>
+                </a>
+                <!--{% if loop.index == 3 %}
+						<div class="col s1 m1 l1">
+							<div class="col s1">
+								test
+							</div>
+						</div>
+						</div>
+					{% endif %}-->
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+<script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
+<script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
+
+{% set error_msg = app.session.flashbag.get('error') %}
+{% if error_msg is not empty %}
+    {% for error in error_msg %}
+        <script>M.toast({html: "<span style='font-size: 20px;'>Erreur </span> : {{ error }}" , classes: 'error_msg'});</script>
+    {% endfor %}
+{% endif %}
+
+{% set success_msg = app.session.flashbag.get('success') %}
+{% if success_msg is not empty %}
+    {% for success in success_msg %}
+        <script>M.toast({html: "{{ success }}" , classes: 'rounded success_msg'});</script>
+    {% endfor %}
+{% endif %}
+</html>
