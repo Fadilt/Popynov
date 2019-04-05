@@ -1,6 +1,21 @@
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav{
+	position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+}
+
+.spaceNavbar{
+	margin-top: 207px;
+}
+
 .card-image.img
 {
-  height:150px; !important
+  height:150px;
 }
 
 .material-icons.md1::before{
@@ -25,3 +40,145 @@
 .customText{
   max-height: 300px;
 }
+
+.textNavBar > li > a{
+  color:black;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.2vw;
+}
+
+.lineAnim:hover{
+	text-align: center;
+	margin-top: -2px;
+	width:100px;
+	background-color:black;
+	animation-duration: 500ms;
+	height: 3px;
+}
+
+.centerLogo{
+	margin-top: 25px;
+	height: 125px;
+}
+
+.btncustomIndex{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.customButton{
+	position: absolute;
+	margin-top: -85px;
+    border-radius: 20px;
+    background-color: black;
+    font-weight: bold;
+	letter-spacing: 4px;
+	height: 40px;
+	font-size: 1.2vw;
+}
+
+.titleIndexCustom{
+	text-align: center;
+	font-size: 2.5vw;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.aboutPhoto{
+	width: 70px;
+}
+
+.popynovFooter{
+	background-color: black;
+	height: 50px;
+}
+
+.copyrightPopynov{
+	text-align:center; 
+	text-transform:uppercase;
+	margin-top: -5px;
+	font-size: 12px;
+}
+
+.textAboutIndex{
+	font-size: 0.8vw;
+}
+
+.hideLogo{
+	display:none;
+}
+
+.showLogoLeft{
+	display: block!important;
+}
+
+/* equal card height */
+.row-equal > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.row-equal .card {
+   width: 100%;
+}
+
+/* ensure equal card height inside carousel */
+.carousel-inner>.row-equal.active, 
+.carousel-inner>.row-equal.next, 
+.carousel-inner>.row-equal.prev {
+    display: flex;
+}
+
+/* prevent flicker during transition */
+.carousel-inner>.row-equal.active.left, 
+.carousel-inner>.row-equal.active.right {
+    opacity: 0.5;
+    display: flex;
+}
+
+
+/* control image height */
+.card-img-top-250 {
+    max-height: 250px;
+    overflow:hidden;
+}
+
+.carousel-item>img{
+	width: 100px!important;
+}
+
+@media screen and (min-width: 200px) and (max-width: 640px) {
+	/* .customButton{
+		font-size: 12px;
+	} */
+}
+
+@media (min-width: 640px) and (max-width: 900px) {
+	/* .customButton{
+		font-size: 12px;
+	} */
+}
+
+@media (max-width: 1249px) {
+	.customButton{
+		letter-spacing: 6px;
+	}
+}
+
+@media (min-width: 1250px) {
+	.customButton{
+		letter-spacing: 6px;
+	}
+
+	
+}
+
+/* .lineAnim{
+  text-align: center;
+  margin-top: 10px;
+  width:10px;
+  color:black;
+  animation-duration: 500ms;
+  height: 5px;
+} */

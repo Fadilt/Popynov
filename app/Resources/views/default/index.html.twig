@@ -1,1 +1,203 @@
-hello world
+{# app/Resources/views/podcast/view.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Popynov Radio | Radio jeune</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+		<link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
+		<link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
+		<link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="row logoEmplacement" style="margin-bottom:0px;">
+				<div class="imgLogo col offset-m5 m2"><img class="col offset-m2 centerLogo" src="assets/images/logo.svg"></div>
+			</div>
+
+			<div class="row textNav" style="margin-bottom:0px!important;margin-top: 0.4vw;">
+				<div class="col m2 logoLeft hide">
+					<img class="col offset-m2" src="assets/images/logo.svg" width="70">
+				</div>
+				
+				<ul id="nav-mobile" class="col m10 right hide-on-med-and-down textNavBar">
+					<li class="col m2"><a href="#about">A propos</a></li>
+					<li class="col m2"><a href="#podcast">podcast</a></li>
+					<li class="col m2"><a href="#article">articles</a></li>
+					<li class="col m2"><a href="#video">videos</a></li>
+					<li class="col m2"><a href="#contact">contact</a></li>
+				</ul>
+			</div>
+		</div>
+		{# <div class="imgPrincipale"></div> #}
+		<div class="row">
+			<img src="assets/images/em.jpg" class="responsive-img spaceNavbar">
+			<button class="btn col offset-m5 m2 customButton">decouvrir</button>
+		</div>
+		<div class="row">
+			<div class="col offset-m1 m10">
+				<div class="container" id="about">
+					<h2 class="titleIndexCustom">A propos</h2>
+					<p style="margin-left:auto;margin-right:auto; text-align:center;">
+						Bien des choses ont évoluées chez Popynov depuis le premier entretien. Nous avons
+						pu donner naissance à plusieurs rubriques tels que les flashs infos, les infos satiriques ou
+						encore l’actualité musicale. Oui, nous ne sommes pas qu’une radio diffusant du contenu
+						musical mais une radio au contenu varié et diversifié. <br><br>
+						Durant ces semaines nous avons pu agir dans différents champs. Tous nous nous
+						sommes essentiellement concentrés sur le site internet, que ce soit sur l’hébergement de
+						celui-ci, son fonctionnement, son contenu et sa forme. Tout ceci nous a notamment permis
+						d’établir notre Business Model.
+					</p>
+				</div>
+				<div class="row" style="margin-top:30px;">
+					<div class="col m1">
+						<div class="col offset-m1 m10">
+							<img src="assets/images/1.png" class="aboutPhoto">
+							<p class="textAboutIndex"><b>Charlie</b><br>
+								<i>PDG & Designer</i>
+							</p>
+						</div>
+					</div>
+					<div class="col m1">
+						<div class="col offset-m1 m10">
+							<img src="assets/images/2.png" class="aboutPhoto">
+							<p class="textAboutIndex"><b>Aurélie</b><br>
+								<i>Responsable Commerciale</i>
+							</p>
+						</div>
+					</div>
+					<div class="col m1">
+						<div class="col offset-m1 m10">
+							<img src="assets/images/6.png" class="aboutPhoto">
+							<p class="textAboutIndex"><b>Théo</b><br>
+								<i>Responsable réseaux & sécurité</i>
+							</p>
+						</div>
+					</div>
+					<div class="col m1">
+						<div class="col offset-m1 m10">
+							<img src="assets/images/7.png" class="aboutPhoto">
+							<p class="textAboutIndex"><b>Nilda</b><br>
+								<i>Commerciale</i>
+							</p>
+						</div>
+					</div>
+					<div class="col m1">
+						<div class="col offset-m1 m10">
+							<img src="assets/images/8.png" class="aboutPhoto">
+							<p class="textAboutIndex"><b>Juliette</b><br>
+								<i>Commerciale</i>
+							</p>
+						</div>
+					</div>
+					<div class="col m1">
+						<div class="col offset-m1 m10">
+							<img src="assets/images/9.png" class="aboutPhoto">
+							<p class="textAboutIndex"><b>Fadil</b><br>
+								<i>Développeur Web</i>
+							</p>
+						</div>
+					</div>
+					<div class="col m1">
+						<div class="col offset-m1 m10">
+							<img src="assets/images/10.png" class="aboutPhoto">
+							<p class="textAboutIndex"><b>Giresse</b><br>
+								<i>Responsable serveur</i>
+							</p>
+						</div>
+					</div>
+					<div class="col m1">
+						<div class="col offset-m1 m10">
+							<img src="assets/images/11.png" class="aboutPhoto">
+							<p class="textAboutIndex"><b>Claude</b><br>
+								<i>Développeur</i>
+							</p>
+						</div>
+					</div>
+					<div class="col m1">
+						<div class="col offset-m1 m10">
+							<img src="assets/images/3.png" class="aboutPhoto">
+							<p class="textAboutIndex"><b>Francesca</b><br>
+								<i>Ressource Humaine</i>
+							</p>
+						</div>
+					</div>
+					<div class="col m1">
+						<div class="col offset-m1 m10">
+							<img src="assets/images/4.png" class="aboutPhoto">
+							<p class="textAboutIndex"><b>Thierry</b><br>
+								<i>Chef de projet</i>
+							</p>
+						</div>
+					</div>
+					<div class="col m1">
+						<div class="col offset-m1 m10">
+							<img src="assets/images/5.png" class="aboutPhoto">
+							<p class="textAboutIndex"><b>Kahina</b><br>
+								<i>Chargé de presse</i>
+							</p>
+						</div>
+					</div>
+					<div class="col m1">
+						<div class="col offset-m1 m10">
+							<img src="assets/images/1.png" class="aboutPhoto">
+							<p class="textAboutIndex"><b>Abdou</b><br>
+								<i>Commerciale</i>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <div class="container" id="podcast">
+			<h2 class="titleIndexCustom">podcast</h2>
+			<div class="container">
+				<div class="carousel carousel-slider center">
+					<div class="carousel-fixed-item center">
+					</div>
+					<div class="carousel-item red white-text" href="#one!">
+						<h2>First Panel</h2>
+						<p class="white-text">This is your first panel</p>
+						<img src="assets/images/1.png" >
+					</div>
+					<div class="carousel-item amber white-text" href="#two!">
+						<h2>Second Panel</h2>
+						<p class="white-text">This is your second panel</p>
+					</div>
+					<div class="carousel-item green white-text" href="#three!">
+						<h2>Third Panel</h2>
+						<p class="white-text">This is your third panel</p>
+					</div>
+					<div class="carousel-item blue white-text" href="#four!">
+						<h2>Fourth Panel</h2>
+						<p class="white-text">This is your fourth panel</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <div class="container" id="article">
+			<h2 class="titleIndexCustom">article</h2>
+		</div>
+
+        <div class="container" id="video">
+			<h2 class="titleIndexCustom">video</h2>
+		</div>
+
+        <div class="container" id="contact">
+			<h2 class="titleIndexCustom">contact</h2>
+		</div>
+
+		<footer class="page-footer popynovFooter">
+			<div class="container">
+				<div class="copyrightPopynov">Copyright POPYNOV 2018 ©</div>
+			</div>
+        </footer>
+	</body>
+	<script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
+	<script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
+	<script type="text/javascript" src="{{asset('assets/init.js') }}"></script>
+</html>
