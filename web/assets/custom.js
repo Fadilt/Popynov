@@ -1,4 +1,14 @@
 $(document).ready(function(){
+    var $nav = $(".nav");
+    var $logo = $(".nav").children(".logoEmplacement");
+    var $goHead = $(".goHead");
+    var $logoLeft = $(".nav").children(".textNav").children(".logoLeft");
+    
+
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    $goHead.toggleClass('showLogoLeft', $(this).scrollTop() > $nav.height());
+    $logo.toggleClass('hideLogo', $(this).scrollTop() > $nav.height());
+    $logoLeft.toggleClass('showLogoLeft', $(this).scrollTop() > $nav.height());
     $('.parallax').parallax();
     $('.carousel').carousel();
     //$('.carousel').carousel('numVisible')
@@ -14,27 +24,37 @@ $(document).ready(function(){
     )
     })
 
+    $(".goHead").on("click", function(e){
+        e.preventDefault();
+        $('html, body').animate({scrollTop:0}, '300');
+    });
+
     $(function () {
         $(document).scroll(function () {
             var $nav = $(".nav");
+            var $goHead = $(".goHead");
             var $logo = $(".nav").children(".logoEmplacement");
             var $logoLeft = $(".nav").children(".textNav").children(".logoLeft");
 
             $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+            $goHead.toggleClass('showLogoLeft', $(this).scrollTop() > $nav.height());
             $logo.toggleClass('hideLogo', $(this).scrollTop() > $nav.height());
             $logoLeft.toggleClass('showLogoLeft', $(this).scrollTop() > $nav.height());
         });
     });
 
-    var instance = M.Carousel.init({
-        fullWidth: true
-      });
-    
-      // Or with jQuery
-    
-      $('.carousel.carousel-slider').carousel({
+      $(document).ready(function(){
+        $('.carousel').carousel();
 
-        indicators: true
+        $('.nextCarouselVideo').on("click", function(){
+            let carouselVi = $(this).parent().children(".carousel");
+            carouselVi.carousel("next");
+        });
+
+        $('.previousCarouselVideo').on("click", function(){
+            let carouselVi = $(this).parent().children(".carousel");
+            carouselVi.carousel("prev");
+        });
       });
       
 });
