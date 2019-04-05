@@ -1,0 +1,72 @@
+{# app/Resources/views/podcast/create.html.twig #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Création d'un article</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
+    <link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
+    <link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <h3>Modification d'un article</h3>
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="input-field col s9 offset-3">
+            <label for="form_nomArticle">{{ form_label(form.nomArticle) }}</label>
+            {{ form_errors(form.nomArticle) }}
+            {{ form_widget(form.nomArticle, {'attr': {'class': 'validate '}}) }}
+        </div>
+
+        <div class="input-field col s9 offset-3">
+            <label for="form_contenuArticle">{{ form_label(form.contenuArticle) }}</label>
+            {{ form_errors(form.contenuArticle) }}
+            {{ form_widget(form.contenuArticle, {'attr': {'class': 'validate materialize-textarea customText', 'style': 'overflow:auto;' }}) }}
+        </div>
+
+        <div class="input-field col s9 offset-3">
+            <img class="responsive-img modifyImage" src="{{ asset('uploads/image/' ~ fileImage) }}">
+            <div class="file-field input-field" style="margin-top:40px;">
+                <div class="btn">
+                    <span>Image</span>
+                    <input type="file" multiple>
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" name="imgArticle" value="{{ fileImage }}" type="text" placeholder="Uploader une image">
+                    {{ form_errors(form.imgArticle) }}
+                    {{ form_widget(form.imgArticle, {'attr': {'class': 'validate file-path', 'type': 'text', 'onChange': 'readURL(this);event.preventDefault();'}}) }}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="input-field col s9 offset-3">
+            {{ form_widget(form.save, {'attr': {'class': 'btn waves-effect waves-light'}}) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+</div>
+</body>
+<script type="text/javascript" src="{{asset('assets/jquery/dist/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
+<script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.modifyImage')
+                    .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+
+</script>
+<script type="text/javascript" src="{{asset('assets/music-player.js') }}"></script>
+</html>

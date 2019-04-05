@@ -8,7 +8,6 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Podcast;
 use AppBundle\Entity\Video;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -31,32 +30,27 @@ class VideoController extends Controller
     {
 
         $video = new Video();
-        $video->setUrlPodcast('Add pod');
 
-        $form = $this->createFormBuilder($podcast)
-            ->add('titrePodcast', TextType::class, array(
+
+        $form = $this->createFormBuilder($video)
+            ->add('titreVideo', TextType::class, array(
                     'label' => 'Ajouter un titre ',
                     'required' => true,
                 )
             )
-            ->add('descriptionPodcast', TextareaType::class, array(
-                    'label' => 'Description du podcast',
+            ->add('descriptionVideo', TextareaType::class, array(
+                    'label' => 'Description de la vidéo',
                     'required' => true,
                 )
             )
-            ->add('imagePodcast', FileType::class, array(
-                    'label' => 'Ajouter une image ',
-                    'required' => true,
-                )
-            )
-            ->add('urlPodcast', FileType::class, array(
+            ->add('urlVideo', FileType::class, array(
                     'data_class' => null,
-                    'label' => 'Uploader le podcast ',
+                    'label' => 'Uploader la vidéo ',
                     'required' => true,
                 )
             )
             ->add('save', SubmitType::class, array(
-                    'label' => 'Crée le podcast '
+                    'label' => 'Crée la vidéo '
                 )
             )
             ->getForm();
@@ -68,32 +62,25 @@ class VideoController extends Controller
             // but, the original `$task` variable has also been updated
             $video = $form->getData();
 
-            $file = $video->getImagePodcast();
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
-
-            $file->move(
-                $this->getParameter('image_directory'), $fileName
-            );
-
-            $videoFile = $video->getUrlPodcast();
+            $videoFile = $video->getUrlVideo();
             $videoName = md5(uniqid()).'.'.$videoFile->guessExtension();
 
             $videoFile->move(
-                $this->getParameter('podcast_directory'), $videoName
+                $this->getParameter('video_directory'), $videoName
             );
 
             // Move the file to the directory where brochures are stored
 
             setlocale(LC_TIME, "fr_FR");
 
-            $video->setDatecreationPodcast(new \DateTime(date('d-m-Y h:i:s'))); //ajoute la date de création
-            $video->setDatemodifPodcast(new \DateTime(date('d-m-Y h:i:s'))); // ajoute la date de modif
+            $video->setDatecreationVideo(new \DateTime(date('d-m-Y h:i:s'))); //ajoute la date de création
+            $video->setDatemodificationVideo(new \DateTime(date('d-m-Y h:i:s'))); // ajoute la date de modif
 
-            $video->setImagePodcast($fileName); // ajoute l'image du podcast
-            $video->setUrlPodcast($videoName); // ajoute le podcast
+
+            $video->setUrlVideo($videoName); // ajoute le podcast
 
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($podcast);
+            $entityManager->persist($video);
             $entityManager->flush();
 
             return $this->redirectToRoute('video_view');
@@ -106,15 +93,15 @@ class VideoController extends Controller
 
     /**
      *
-     * @Route("/video/view/all")
+     * @Route("/videos/view")
      */
     public function viewVideo()
     {
-        $repository = $this->getDoctrine()->getRepository(Podcast::class);
-        $podcasts = $repository->findAll();
+        $repository = $this->getDoctrine()->getRepository(Video::class);
+        $videos = $repository->findAll();
 
-        return $this->render('podcast/view.html.twig', array(
-            'podcasts' => $podcasts,
+        return $this->render('video/view.html.twig', array(
+            'videos' => $videos,
         ));
     }
 
@@ -136,35 +123,42 @@ class VideoController extends Controller
      *
      * @Route("/video/update/{id}")
      */
-    public function updateVideo(Request $request    )
+    public function updateVideo(Request $request, $id)
     {
-        $video = new Video();
-        $video->setUrlPodcast('Add pod');
+        $em = $this->getDoctrine()->getManager();
 
-        $form = $this->createFormBuilder($video)
-            ->add('titrePodcast', TextType::class, array(
+        $post = $em->getRepository(Video::class)->find($id);
+        $viewVideo = $post;
+        if(!$post) {
+            throw $this->createNotFoundException('Impossible de trouver cette vidéo');
+        }
+
+        $urlVideoOriginal = $post->getUrlVideo();
+        $fileUrl = new File($this->getParameter('video_directory') . '/' . $post->getUrlVideo());
+
+        $post->setTitreVideo($post->getTitreVideo());
+        $post->setDescriptionVideo($post->getDescriptionVideo());
+        $post->setUrlVideo($fileUrl);
+
+        $form = $this->createFormBuilder($post)
+            ->add('titreVideo', TextType::class, array(
                     'label' => 'Ajouter un titre ',
                     'required' => true,
                 )
             )
-            ->add('descriptionPodcast', TextareaType::class, array(
-                    'label' => 'Description du podcast',
+            ->add('descriptionVideo', TextareaType::class, array(
+                    'label' => 'Description de la vidéo',
                     'required' => true,
                 )
             )
-            ->add('imagePodcast', FileType::class, array(
-                    'label' => 'Ajouter une image ',
-                    'required' => true,
-                )
-            )
-            ->add('urlPodcast', FileType::class, array(
+            ->add('urlVideo', FileType::class, array(
                     'data_class' => null,
-                    'label' => 'Uploader le podcast ',
+                    'label' => 'Uploader la vidéo ',
                     'required' => true,
                 )
             )
             ->add('save', SubmitType::class, array(
-                    'label' => 'Crée le podcast '
+                    'label' => 'Modifier la vidéo '
                 )
             )
             ->getForm();
@@ -172,44 +166,39 @@ class VideoController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $form->getData();
-            // but, the original `$task` variable has also been updated
-            $video = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $post = $em->getRepository(Video::class)->find($id);
+            $titreVideo = $form['titreVideo']->getData();
+            $descriptionVideo = $form['descriptionVideo']->getData();
 
-            $file = $video->getImagePodcast();
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            if($form['urlVideo']->getData() && $form['urlVideo']->getData() != null){
+                $urlVideo = $form['urlVideo']->getData();
+                if($urlVideo != "" && $urlVideo != null && $urlVideo){
+                    $videoFile = $urlVideo;
+                    $videoName = md5(uniqid()).'.'.$videoFile->guessExtension();
 
-            $file->move(
-                $this->getParameter('image_directory'), $fileName
-            );
+                    $videoFile->move(
+                        $this->getParameter('video_directory'), $videoName
+                    );
+                    $post->setUrlV($videoName);
+                }
+            }
 
-            $videoFile = $video->getUrlPodcast();
-            $videoName = md5(uniqid()).'.'.$videoFile->guessExtension();
+            $post->setTitreVideo($titreVideo);
+            $post->setDescriptionVideo($descriptionVideo);
+            $post->setDatecreationVideo(new \DateTime(date('d-m-Y h:i:s'))); // ajoute la date de modif
 
-            $videoFile->move(
-                $this->getParameter('podcast_directory'), $videoName
-            );
+            $em->flush();
 
-            // Move the file to the directory where brochures are stored
-
-            setlocale(LC_TIME, "fr_FR");
-
-            $video->setDatecreationPodcast(new \DateTime(date('d-m-Y h:i:s'))); //ajoute la date de création
-            $video->setDatemodifPodcast(new \DateTime(date('d-m-Y h:i:s'))); // ajoute la date de modif
-
-            $video->setImagePodcast($fileName); // ajoute l'image du podcast
-            $video->setUrlPodcast($videoName); // ajoute le podcast
-
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($video);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('video_view');
+            return $this->redirectToRoute('video_viewId', array('id' => $id));
         }
 
-        return $this->render('video/create.html.twig', array(
+        return $this->render('video/update.html.twig', array(
             'form' => $form->createView(),
+            'urlVideo' => $urlVideoOriginal,
+            'video' => $viewVideo,
         ));
+
     }
 
     /**

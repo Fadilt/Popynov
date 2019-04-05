@@ -122,4 +122,85 @@ class ArticleController extends Controller
 
     }
 
+    /**
+     *
+     * @Route("/article/update/{id}")
+     */
+    public function updateVideo(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $post = $em->getRepository(Article::class)->find($id);
+        $viewArticle = $post;
+        if(!$post) {
+            throw $this->createNotFoundException('Impossible de trouver cette article');
+        }
+        $imageArticleOriginal = $post->getImgArticle();
+        $fileImage = new File($this->getParameter('image_directory') . '/' . $post->getImgArticle());
+
+
+        $post->setNomArticle($post->getNomArticle());
+        $post->setContenuArticle($post->getContenuArticle());
+        $post->setImgArticle($fileImage);
+
+
+        $form = $this->createFormBuilder($post)
+            ->add('nomArticle', TextType::class, array(
+                    'label' => 'Ajouter un titre ',
+                    'required' => true,
+                )
+            )
+            ->add('contenuArticle', TextareaType::class, array(
+                    'label' => 'Description du article',
+                    'required' => true,
+                )
+            )
+            ->add('imgArticle', FileType::class, array(
+                    'label' => 'Ajouter une image ',
+                    'required' => true,
+                )
+            )
+            ->add('save', SubmitType::class, array(
+                    'label' => 'Enregistrer les modifications '
+                )
+            )
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $post = $em->getRepository(Article::class)->find($id);
+            $nomArticle = $form['nomArticle']->getData();
+            $contenuArticle = $form['contenuArticle']->getData();
+            if($form['imgArticle']->getData() && $form['imgArticle']->getData() != null && $form['imgArticle']->getData() != ""){
+                $imgArticle = $form['imgArticle']->getData();
+                $file = $imgArticle;
+                $fileName = md5(uniqid()).'.'.$file->guessExtension();
+
+                $file->move(
+                    $this->getParameter('article_directory'), $fileName
+                );
+                $post->setImgArticle($fileName);
+            }
+
+
+            $post->setNomArticle($nomArticle);
+            $post->setContenuArticle($contenuArticle);
+            $post->setDatemodifArticle(new \DateTime(date('d-m-Y h:i:s'))); // ajoute la date de modif
+
+            $em->flush();
+
+            return $this->redirectToRoute('article_viewId', array('id' => $id));
+        }
+
+        return $this->render('article/update.html.twig', array(
+            'form' => $form->createView(),
+            'fileImage' => $imageArticleOriginal,
+            'article' => $viewArticle,
+        ));
+
+    }
+
+
 }
