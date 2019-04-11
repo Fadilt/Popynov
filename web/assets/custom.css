@@ -209,7 +209,7 @@ body{
 
 .goHead{
   position: fixed;
-	top: 45vw;
+	bottom: 6vw;
 	right: 5vw;
 	border-radius: 50%;
 	width: 50px;

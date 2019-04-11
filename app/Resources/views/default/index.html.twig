@@ -9,6 +9,7 @@
 		<link href="{{asset('assets/materialize-css/dist/css/materialize.min.css') }}" rel="stylesheet"/>
 		<link href="{{asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
 		<link href="{{asset('assets/custom.css') }}" rel="stylesheet"/>
+		<link href="{{asset('assets/audioplayer.css') }}" rel="stylesheet"/>
 	</head>
 	<body>
 		{# Navbar #}
@@ -21,14 +22,34 @@
 				<div class="col m2 logoLeft hide">
 					<a href="/"><img class="col offset-m2" src="assets/images/logo.svg" width="70"></a>
 				</div>
-				
-				<ul id="nav-mobile" class="col m10 right hide-on-med-and-down textNavBar">
+			
+				<ul id="nav-mobile" class="col m10 right textNavBar">
 					<li class="col m2"><a href="#podcast">podcasts</a></li>
 					<li class="col m2"><a href="#article">articles</a></li>
 					<li class="col m2"><a href="#video">videos</a></li>
 					<li class="col m2"><a href="#about">A propos</a></li>
 					<li class="col m2"><a href="#contact">contact</a></li>
 				</ul>
+
+				<div class="col offset-m4 m4">
+					<div class="audioplayer audioplayer-stopped">
+						<audio>
+							<source src="http://78.129.175.157/stream.mp3?ipport=78.129.175.157_38605" type="audio/aac">
+							<source src="http://78.129.175.157/stream.mp3?ipport=78.129.175.157_38605" type="audio/mpeg">
+						</audio>
+						<div class="audioplayer-playpause" title="Play"><a href="#">Play</a></div>
+						<div class="audioplayer-time audioplayer-time-current">00:00</div>
+						<div class="audioplayer-bar">
+							<div class="audioplayer-bar-loaded"></div>
+							<div class="audioplayer-bar-played"></div>
+						</div>
+						<div class="audioplayer-time audioplayer-time-duration">&hellip;</div>
+						<div class="audioplayer-volume">
+							<div class="audioplayer-volume-button" title="Volume"><a href="#">Volume</a></div>
+							<div class="audioplayer-volume-adjust"><div><div></div></div></div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		
@@ -47,8 +68,8 @@
 							<h4>{{ podcast.titrePodcast }}</h4>
 						</div>
 						<img class="responsive-img" style="margin-top: -100px;" src="{{ asset('uploads/image/' ~ podcast.imagePodcast) }}">
-						<div class="row valign-wrapper">
-							<a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" style="left:35px!important; margin-left:auto; margin-right:auto;" onClick="togglePlay()"><i class="material-icons" id="PausePlay">play_arrow</i></a>
+						<div class="row valign-wrapper" style="margin-top: -85px;">
+							{# <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" style="left:35px!important; margin-left:auto; margin-right:auto;" onClick="togglePlay()"><i class="material-icons" id="PausePlay">play_arrow</i></a> #}
 							<div class="hide">
 								<div class="col s2" id="position"></div>
 								<div class="col s6 range-field valign-wrapper"><input id="seekbar" type="range" min="0" max="0" step="1" oninput="setSeek(this.value)" onchange="setSeek(this.value)"></div>
@@ -88,7 +109,7 @@
         <div class="container" id="video" style="margin-top: -60px;">
 			<h2 class="titleIndexCustom">videos</h2>
 			
-			<div class="carousel" style="margin-top:-140px; height:550px;">
+			<div class="carousel" style="margin-top:-100px; height:550px;">
 				{% for video in videos %}
 				<div class="carousel-item" style="width:300px;">
 					<iframe width="360" height="315" src="https://www.youtube.com/embed/{{ video.urlVideo }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -260,5 +281,29 @@
 	<script type="text/javascript" src="{{asset('assets/materialize-css/dist/js/materialize.min.js') }}"></script>
 	<script type="text/javascript" src="{{asset('assets/custom.js') }}"></script>
 	<script type="text/javascript" src="{{asset('assets/init.js') }}"></script>
-	<script type="text/javascript" src="{{asset('assets/music-player.js') }}"></script>
+	<script type="text/javascript" src="{{asset('assets/audioplayer.min.js') }}"></script>
+	<script>
+    $( function()
+    {
+		audio = true;
+		$( 'audio' ).audioPlayer(
+		{
+			classPrefix: 'audioplayer',
+			strPlay: 'Play',
+			strPause: 'Pause',
+			strVolume: 'Volume'
+		});
+		
+		$(".audioplayer-playpause").on("click", function(){
+			console.log("ok");
+			if(audio == false){
+				$(this).parent().children(".audioplayer-mini").append('<embed src="http://78.129.175.157/stream.mp3?ipport=78.129.175.157_38605" width="0" height="0" volume="100" autostart="false" loop="false">');
+				audio = true;
+			}else{
+				$(this).parent().children(".audioplayer-mini").children("embed").remove();
+				audio = false;
+			}
+		})
+    });
+</script>
 </html>

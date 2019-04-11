@@ -18,15 +18,15 @@ class DefaultController extends Controller
     {
         // on va récupérer les podcasts
         $repositoryPodcast = $this->getDoctrine()->getRepository(Podcast::class);
-        $podcasts = $repositoryPodcast->findAll();
+        $podcasts = $repositoryPodcast->findBy(array(), array('idPodcast' => 'DESC'));
 
         // on va récupérer les articles
         $repositoryArticle = $this->getDoctrine()->getRepository(Article::class);
-        $articles = $repositoryArticle->findAll();
+        $articles = $repositoryArticle->findBy(array(), array('idArticle' => 'DESC'));
 
         // on va récupérer les vidéos
         $repositoryVideo = $this->getDoctrine()->getRepository(Video::class);
-        $videos = $repositoryVideo->findAll();
+        $videos = $repositoryVideo->findBy(array(), array('idVideo' => 'DESC'));
 
 
         // replace this example code with whatever you need
