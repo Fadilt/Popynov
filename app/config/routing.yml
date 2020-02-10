@@ -36,16 +36,16 @@ article_viewId:
 
 video_creation:
   path:      /video/create
-  defaults:  { _controller: AppBundle:Article:create }
+  defaults:  { _controller: AppBundle:Video:create }
 
 video_view:
   path:      /videos/view
-  defaults:  { _controller: AppBundle:Article:view }
+  defaults:  { _controller: AppBundle:Video:view }
 
 video_update:
   path:      /video/update/{id}
-  defaults:  { _controller: AppBundle:Article:update }
+  defaults:  { _controller: AppBundle:Video:update }
 
 video_viewId:
   path:      /video/view/{id}
-  defaults:  { _controller: AppBundle:Article:viewId }
+  defaults:  { _controller: AppBundle:Video:viewId }

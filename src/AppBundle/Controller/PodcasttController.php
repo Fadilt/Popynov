@@ -34,7 +34,7 @@ class PodcasttController extends Controller
 
         $form = $this->createFormBuilder($podcast)
             ->add('titrePodcast', TextType::class, array(
-                    'label' => 'Ajouter un titre ',
+                    'label' => 'Ajouter un titre',
                     'required' => true,
                 )
             )

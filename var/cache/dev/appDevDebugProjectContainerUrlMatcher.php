@@ -100,6 +100,29 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        if (0 === strpos($pathinfo, '/article')) {
+            // article
+            if ($pathinfo === '/article/create') {
+                return array (  '_controller' => 'AppBundle\\Controller\\ArticleController::createArticle',  '_route' => 'article',);
+            }
+
+            // app_article_viewarticle
+            if ($pathinfo === '/articles/view') {
+                return array (  '_controller' => 'AppBundle\\Controller\\ArticleController::viewArticle',  '_route' => 'app_article_viewarticle',);
+            }
+
+            // app_article_viewidarticle
+            if (0 === strpos($pathinfo, '/article/view') && preg_match('#^/article/view/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_article_viewidarticle')), array (  '_controller' => 'AppBundle\\Controller\\ArticleController::viewIdArticle',));
+            }
+
+            // app_article_updatevideo
+            if (0 === strpos($pathinfo, '/article/update') && preg_match('#^/article/update/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_article_updatevideo')), array (  '_controller' => 'AppBundle\\Controller\\ArticleController::updateVideo',));
+            }
+
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -110,19 +133,126 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         if (0 === strpos($pathinfo, '/podcast')) {
-            // app_podcast_createpodcast
+            // app_podcastt_createpodcast
             if ($pathinfo === '/podcast/create') {
-                return array (  '_controller' => 'AppBundle\\Controller\\PodcastController::createPodcast',  '_route' => 'app_podcast_createpodcast',);
+                return array (  '_controller' => 'AppBundle\\Controller\\PodcasttController::createPodcast',  '_route' => 'app_podcastt_createpodcast',);
             }
 
-            // app_podcast_viewpodcast
-            if ($pathinfo === '/podcast/view') {
-                return array (  '_controller' => 'AppBundle\\Controller\\PodcastController::viewPodcast',  '_route' => 'app_podcast_viewpodcast',);
+            // app_podcastt_viewpodcast
+            if ($pathinfo === '/podcasts/view') {
+                return array (  '_controller' => 'AppBundle\\Controller\\PodcasttController::viewPodcast',  '_route' => 'app_podcastt_viewpodcast',);
             }
 
+            // app_podcastt_viewidpodcast
+            if (0 === strpos($pathinfo, '/podcast/view') && preg_match('#^/podcast/view/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_podcastt_viewidpodcast')), array (  '_controller' => 'AppBundle\\Controller\\PodcasttController::viewIdPodcast',));
+            }
+
+            // app_podcastt_updatepodcast
+            if (0 === strpos($pathinfo, '/podcast/update') && preg_match('#^/podcast/update/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_podcastt_updatepodcast')), array (  '_controller' => 'AppBundle\\Controller\\PodcasttController::updatePodcast',));
+            }
+
+            // app_podcastt_deletepodcast
+            if (0 === strpos($pathinfo, '/podcast/delete') && preg_match('#^/podcast/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_podcastt_deletepodcast')), array (  '_controller' => 'AppBundle\\Controller\\PodcasttController::deletePodcast',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/video')) {
+            // app_video_createvideo
+            if ($pathinfo === '/video/create') {
+                return array (  '_controller' => 'AppBundle\\Controller\\VideoController::createVideo',  '_route' => 'app_video_createvideo',);
+            }
+
+            // app_video_viewvideo
+            if ($pathinfo === '/videos/view') {
+                return array (  '_controller' => 'AppBundle\\Controller\\VideoController::viewVideo',  '_route' => 'app_video_viewvideo',);
+            }
+
+            // app_video_viewidvideo
+            if (0 === strpos($pathinfo, '/video/view') && preg_match('#^/video/view/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_video_viewidvideo')), array (  '_controller' => 'AppBundle\\Controller\\VideoController::viewIdVideo',));
+            }
+
+            // app_video_updatevideo
+            if (0 === strpos($pathinfo, '/video/update') && preg_match('#^/video/update/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_video_updatevideo')), array (  '_controller' => 'AppBundle\\Controller\\VideoController::updateVideo',));
+            }
+
+            // app_video_deletevideo
+            if (0 === strpos($pathinfo, '/video/delete') && preg_match('#^/video/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_video_deletevideo')), array (  '_controller' => 'AppBundle\\Controller\\VideoController::deleteVideo',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/podcast')) {
             // podcast_creation
             if ($pathinfo === '/podcast/create') {
-                return array (  '_controller' => 'AppBundle\\Controller\\PodcastController::createAction',  '_route' => 'podcast_creation',);
+                return array (  '_controller' => 'AppBundle:Podcast:create',  '_route' => 'podcast_creation',);
+            }
+
+            // podcast_view
+            if ($pathinfo === '/podcasts/view') {
+                return array (  '_controller' => 'AppBundle:Podcast:view',  '_route' => 'podcast_view',);
+            }
+
+            // podcast_update
+            if (0 === strpos($pathinfo, '/podcast/update') && preg_match('#^/podcast/update/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'podcast_update')), array (  '_controller' => 'AppBundle:Podcast:update',));
+            }
+
+            // podcast_viewId
+            if (0 === strpos($pathinfo, '/podcast/view') && preg_match('#^/podcast/view/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'podcast_viewId')), array (  '_controller' => 'AppBundle\\Controller\\ArticleController::viewIdAction',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/article')) {
+            // article_creation
+            if ($pathinfo === '/article/create') {
+                return array (  '_controller' => 'AppBundle\\Controller\\ArticleController::createAction',  '_route' => 'article_creation',);
+            }
+
+            // article_view
+            if ($pathinfo === '/articles/view') {
+                return array (  '_controller' => 'AppBundle\\Controller\\ArticleController::viewAction',  '_route' => 'article_view',);
+            }
+
+            // article_update
+            if (0 === strpos($pathinfo, '/article/update') && preg_match('#^/article/update/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'article_update')), array (  '_controller' => 'AppBundle\\Controller\\ArticleController::updateAction',));
+            }
+
+            // article_viewId
+            if (0 === strpos($pathinfo, '/article/view') && preg_match('#^/article/view/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'article_viewId')), array (  '_controller' => 'AppBundle\\Controller\\ArticleController::viewIdAction',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/video')) {
+            // video_creation
+            if ($pathinfo === '/video/create') {
+                return array (  '_controller' => 'AppBundle\\Controller\\VideoController::createAction',  '_route' => 'video_creation',);
+            }
+
+            // video_view
+            if ($pathinfo === '/videos/view') {
+                return array (  '_controller' => 'AppBundle\\Controller\\VideoController::viewAction',  '_route' => 'video_view',);
+            }
+
+            // video_update
+            if (0 === strpos($pathinfo, '/video/update') && preg_match('#^/video/update/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'video_update')), array (  '_controller' => 'AppBundle\\Controller\\VideoController::updateAction',));
+            }
+
+            // video_viewId
+            if (0 === strpos($pathinfo, '/video/view') && preg_match('#^/video/view/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'video_viewId')), array (  '_controller' => 'AppBundle\\Controller\\VideoController::viewIdAction',));
             }
 
         }

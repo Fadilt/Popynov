@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">/Users/yiming/popynov/app</parameter>
+    <parameter key="kernel.root_dir">/Users/fadil/popynov/popynov/app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">/Users/yiming/popynov/var/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/Users/yiming/popynov/var/logs</parameter>
+    <parameter key="kernel.cache_dir">/Users/fadil/popynov/popynov/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/Users/fadil/popynov/popynov/var/logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
       <parameter key="TwigBundle">Symfony\Bundle\TwigBundle\TwigBundle</parameter>
       <parameter key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</parameter>
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
-      <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
@@ -25,67 +24,62 @@
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle</parameter>
+        <parameter key="path">/Users/fadil/popynov/popynov/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="SecurityBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle</parameter>
+        <parameter key="path">/Users/fadil/popynov/popynov/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle</parameter>
+        <parameter key="path">/Users/fadil/popynov/popynov/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle</parameter>
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="MonologBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/Users/yiming/popynov/vendor/symfony/monolog-bundle</parameter>
+        <parameter key="path">/Users/fadil/popynov/popynov/vendor/symfony/monolog-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\MonologBundle</parameter>
       </parameter>
       <parameter key="SwiftmailerBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/Users/yiming/popynov/vendor/symfony/swiftmailer-bundle</parameter>
+        <parameter key="path">/Users/fadil/popynov/popynov/vendor/symfony/swiftmailer-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SwiftmailerBundle</parameter>
-      </parameter>
-      <parameter key="AsseticBundle" type="collection">
-        <parameter key="parent">null</parameter>
-        <parameter key="path">/Users/yiming/popynov/vendor/symfony/assetic-bundle</parameter>
-        <parameter key="namespace">Symfony\Bundle\AsseticBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/Users/yiming/popynov/vendor/doctrine/doctrine-bundle</parameter>
+        <parameter key="path">/Users/fadil/popynov/popynov/vendor/doctrine/doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="SensioFrameworkExtraBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/Users/yiming/popynov/vendor/sensio/framework-extra-bundle</parameter>
+        <parameter key="path">/Users/fadil/popynov/popynov/vendor/sensio/framework-extra-bundle</parameter>
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
       </parameter>
       <parameter key="AppBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/Users/yiming/popynov/src/AppBundle</parameter>
+        <parameter key="path">/Users/fadil/popynov/popynov/src/AppBundle</parameter>
         <parameter key="namespace">AppBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle</parameter>
+        <parameter key="path">/Users/fadil/popynov/popynov/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle</parameter>
         <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
       </parameter>
       <parameter key="WebProfilerBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle</parameter>
+        <parameter key="path">/Users/fadil/popynov/popynov/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebProfilerBundle</parameter>
       </parameter>
       <parameter key="SensioDistributionBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/Users/yiming/popynov/vendor/sensio/distribution-bundle</parameter>
+        <parameter key="path">/Users/fadil/popynov/popynov/vendor/sensio/distribution-bundle</parameter>
         <parameter key="namespace">Sensio\Bundle\DistributionBundle</parameter>
       </parameter>
       <parameter key="SensioGeneratorBundle" type="collection">
         <parameter key="parent">null</parameter>
-        <parameter key="path">/Users/yiming/popynov/vendor/sensio/generator-bundle</parameter>
+        <parameter key="path">/Users/fadil/popynov/popynov/vendor/sensio/generator-bundle</parameter>
         <parameter key="namespace">Sensio\Bundle\GeneratorBundle</parameter>
       </parameter>
     </parameter>
@@ -102,7 +96,9 @@
     <parameter key="mailer_password">null</parameter>
     <parameter key="secret">8aaba332c01a8817ab00fff1efaac3b4643f0ea2</parameter>
     <parameter key="locale">en</parameter>
-    <parameter key="podcast_directory">/Users/yiming/popynov/app/../web/uploads/podcast</parameter>
+    <parameter key="podcast_directory">/Users/fadil/popynov/popynov/app/../web/uploads/podcast</parameter>
+    <parameter key="video_directory">/Users/fadil/popynov/popynov/app/../web/uploads/video</parameter>
+    <parameter key="image_directory">/Users/fadil/popynov/popynov/app/../web/uploads/image</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">8aaba332c01a8817ab00fff1efaac3b4643f0ea2</parameter>
@@ -115,7 +111,7 @@
       <parameter key="cookie_httponly">true</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">/Users/yiming/popynov/app/../var/sessions/dev</parameter>
+    <parameter key="session.save_path">/Users/fadil/popynov/popynov/app/../var/sessions/dev</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
@@ -128,7 +124,7 @@
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:/Users/yiming/popynov/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:/Users/fadil/popynov/popynov/var/cache/dev/profiler</parameter>
     <parameter key="router.options.generator_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\PhpGeneratorDumper</parameter>
@@ -140,12 +136,12 @@
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
-    <parameter key="router.resource">/Users/yiming/popynov/var/cache/dev/assetic/routing.yml</parameter>
+    <parameter key="router.resource">/Users/fadil/popynov/popynov/app/config/routing_dev.yml</parameter>
     <parameter key="router.cache_class_prefix">appDevDebugProjectContainer</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">/Users/yiming/popynov/var/cache/dev/appDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">/Users/fadil/popynov/popynov/var/cache/dev/appDevDebugProjectContainer.xml</parameter>
     <parameter key="security.authentication.trust_resolver.anonymous_class">Symfony\Component\Security\Core\Authentication\Token\AnonymousToken</parameter>
     <parameter key="security.authentication.trust_resolver.rememberme_class">Symfony\Component\Security\Core\Authentication\Token\RememberMeToken</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection"/>
@@ -200,7 +196,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.local_domain">null</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">/Users/yiming/popynov/var/cache/dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.memory.path">/Users/fadil/popynov/popynov/var/cache/dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -211,59 +207,6 @@
       <parameter key="default">swiftmailer.mailer.default</parameter>
     </parameter>
     <parameter key="swiftmailer.default_mailer">default</parameter>
-    <parameter key="assetic.asset_factory.class">Symfony\Bundle\AsseticBundle\Factory\AssetFactory</parameter>
-    <parameter key="assetic.asset_manager.class">Assetic\Factory\LazyAssetManager</parameter>
-    <parameter key="assetic.asset_manager_cache_warmer.class">Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer</parameter>
-    <parameter key="assetic.cached_formula_loader.class">Assetic\Factory\Loader\CachedFormulaLoader</parameter>
-    <parameter key="assetic.config_cache.class">Assetic\Cache\ConfigCache</parameter>
-    <parameter key="assetic.config_loader.class">Symfony\Bundle\AsseticBundle\Factory\Loader\ConfigurationLoader</parameter>
-    <parameter key="assetic.config_resource.class">Symfony\Bundle\AsseticBundle\Factory\Resource\ConfigurationResource</parameter>
-    <parameter key="assetic.coalescing_directory_resource.class">Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource</parameter>
-    <parameter key="assetic.directory_resource.class">Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource</parameter>
-    <parameter key="assetic.filter_manager.class">Symfony\Bundle\AsseticBundle\FilterManager</parameter>
-    <parameter key="assetic.worker.ensure_filter.class">Assetic\Factory\Worker\EnsureFilterWorker</parameter>
-    <parameter key="assetic.worker.cache_busting.class">Assetic\Factory\Worker\CacheBustingWorker</parameter>
-    <parameter key="assetic.value_supplier.class">Symfony\Bundle\AsseticBundle\DefaultValueSupplier</parameter>
-    <parameter key="assetic.node.paths" type="collection"/>
-    <parameter key="assetic.cache_dir">/Users/yiming/popynov/var/cache/dev/assetic</parameter>
-    <parameter key="assetic.bundles" type="collection">
-      <parameter>FrameworkBundle</parameter>
-      <parameter>SecurityBundle</parameter>
-      <parameter>TwigBundle</parameter>
-      <parameter>MonologBundle</parameter>
-      <parameter>SwiftmailerBundle</parameter>
-      <parameter>AsseticBundle</parameter>
-      <parameter>DoctrineBundle</parameter>
-      <parameter>SensioFrameworkExtraBundle</parameter>
-      <parameter>AppBundle</parameter>
-      <parameter>DebugBundle</parameter>
-      <parameter>WebProfilerBundle</parameter>
-      <parameter>SensioDistributionBundle</parameter>
-      <parameter>SensioGeneratorBundle</parameter>
-    </parameter>
-    <parameter key="assetic.twig_extension.class">Symfony\Bundle\AsseticBundle\Twig\AsseticExtension</parameter>
-    <parameter key="assetic.twig_formula_loader.class">Assetic\Extension\Twig\TwigFormulaLoader</parameter>
-    <parameter key="assetic.helper.dynamic.class">Symfony\Bundle\AsseticBundle\Templating\DynamicAsseticHelper</parameter>
-    <parameter key="assetic.helper.static.class">Symfony\Bundle\AsseticBundle\Templating\StaticAsseticHelper</parameter>
-    <parameter key="assetic.php_formula_loader.class">Symfony\Bundle\AsseticBundle\Factory\Loader\AsseticHelperFormulaLoader</parameter>
-    <parameter key="assetic.debug">true</parameter>
-    <parameter key="assetic.use_controller">true</parameter>
-    <parameter key="assetic.enable_profiler">false</parameter>
-    <parameter key="assetic.read_from">/Users/yiming/popynov/app/../web</parameter>
-    <parameter key="assetic.write_to">/Users/yiming/popynov/app/../web</parameter>
-    <parameter key="assetic.variables" type="collection"/>
-    <parameter key="assetic.java.bin">/usr/bin/java</parameter>
-    <parameter key="assetic.node.bin">/usr/local/bin/node</parameter>
-    <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
-    <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
-    <parameter key="assetic.reactjsx.bin">/usr/bin/jsx</parameter>
-    <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>
-    <parameter key="assetic.twig_extension.functions" type="collection"/>
-    <parameter key="assetic.controller.class">Symfony\Bundle\AsseticBundle\Controller\AsseticController</parameter>
-    <parameter key="assetic.routing_loader.class">Symfony\Bundle\AsseticBundle\Routing\AsseticLoader</parameter>
-    <parameter key="assetic.cache.class">Assetic\Cache\FilesystemCache</parameter>
-    <parameter key="assetic.use_controller_worker.class">Symfony\Bundle\AsseticBundle\Factory\Worker\UseControllerWorker</parameter>
-    <parameter key="assetic.request_listener.class">Symfony\Bundle\AsseticBundle\EventListener\RequestListener</parameter>
     <parameter key="doctrine_cache.apc.class">Doctrine\Common\Cache\ApcCache</parameter>
     <parameter key="doctrine_cache.apcu.class">Doctrine\Common\Cache\ApcuCache</parameter>
     <parameter key="doctrine_cache.array.class">Doctrine\Common\Cache\ArrayCache</parameter>
@@ -371,7 +314,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">/Users/yiming/popynov/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">/Users/fadil/popynov/popynov/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
     <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
@@ -494,16 +437,10 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>/Users/yiming/popynov/app/Resources</argument>
+                <argument>/Users/fadil/popynov/popynov/app/Resources</argument>
               </service>
             </argument>
             <argument type="service" id="templating.locator"/>
-          </service>
-        </argument>
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer" public="false">
-            <tag name="kernel.cache_warmer" priority="10"/>
-            <argument type="service" id="service_container"/>
           </service>
         </argument>
         <argument type="service" id="kernel.class_cache.cache_warmer"/>
@@ -527,7 +464,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.filename_parser"/>
-                <argument>/Users/yiming/popynov/app/Resources</argument>
+                <argument>/Users/fadil/popynov/popynov/app/Resources</argument>
               </service>
             </argument>
             <argument type="collection"/>
@@ -540,7 +477,7 @@
             <argument type="service">
               <service class="Symfony\Bundle\TwigBundle\TemplateIterator" public="false">
                 <argument type="service" id="kernel"/>
-                <argument>/Users/yiming/popynov/app</argument>
+                <argument>/Users/fadil/popynov/popynov/app</argument>
                 <argument type="collection"/>
               </service>
             </argument>
@@ -572,10 +509,10 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
-                  <argument>bq7X6NIEph</argument>
+                  <argument>VYyLp3BzD2</argument>
                   <argument>0</argument>
-                  <argument>PP5lYasjZU0CuNM1HRgffV</argument>
-                  <argument>/Users/yiming/popynov/var/cache/dev/pools</argument>
+                  <argument>Qng492oOMLMNynZMB72dqw</argument>
+                  <argument>/Users/fadil/popynov/popynov/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
                 </service>
@@ -585,10 +522,10 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
-                  <argument>nVYH7PsnSi</argument>
+                  <argument>PSSBC-dQyw</argument>
                   <argument>0</argument>
-                  <argument>PP5lYasjZU0CuNM1HRgffV</argument>
-                  <argument>/Users/yiming/popynov/var/cache/dev/pools</argument>
+                  <argument>Qng492oOMLMNynZMB72dqw</argument>
+                  <argument>/Users/fadil/popynov/popynov/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
                 </service>
@@ -606,7 +543,7 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator">
       <argument type="service" id="kernel"/>
-      <argument>/Users/yiming/popynov/app/Resources</argument>
+      <argument>/Users/fadil/popynov/popynov/app/Resources</argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner">
       <argument>8aaba332c01a8817ab00fff1efaac3b4643f0ea2</argument>
@@ -721,7 +658,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">/Users/yiming/popynov/var/cache/dev/translations</argument>
+        <argument key="cache_dir">/Users/fadil/popynov/popynov/var/cache/dev/translations</argument>
         <argument key="debug">true</argument>
       </argument>
       <argument type="collection"/>
@@ -908,19 +845,19 @@
     </service>
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <tag name="cache.pool"/>
-      <argument>JOmdokMGG3</argument>
+      <argument>PY6c8VwPiP</argument>
       <argument>0</argument>
-      <argument>/Users/yiming/popynov/var/cache/dev/pools</argument>
+      <argument>/Users/fadil/popynov/popynov/var/cache/dev/pools</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
-      <argument>KQF97u6J6F</argument>
+      <argument>TFmn0Q9siJ</argument>
       <argument>0</argument>
-      <argument>PP5lYasjZU0CuNM1HRgffV</argument>
-      <argument>/Users/yiming/popynov/var/cache/dev/pools</argument>
+      <argument>Qng492oOMLMNynZMB72dqw</argument>
+      <argument>/Users/fadil/popynov/popynov/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1176,7 +1113,7 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>/Users/yiming/popynov/var/cache/dev</argument>
+      <argument>/Users/fadil/popynov/popynov/var/cache/dev</argument>
     </service>
     <service id="validator" class="Symfony\Component\Validator\Validator\ValidatorInterface">
       <factory service="validator.builder" method="getValidator"/>
@@ -1206,7 +1143,7 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
-          <argument>/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</argument>
+          <argument>/Users/fadil/popynov/popynov/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -1238,7 +1175,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service">
         <service class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-          <argument>file:/Users/yiming/popynov/var/cache/dev/profiler</argument>
+          <argument>file:/Users/fadil/popynov/popynov/var/cache/dev/profiler</argument>
         </service>
       </argument>
       <argument type="service" id="monolog.logger.profiler" on-invalid="null"/>
@@ -1422,15 +1359,6 @@
           </call>
           <call method="addLoader">
             <argument type="service">
-              <service class="Symfony\Bundle\AsseticBundle\Routing\AsseticLoader" public="false">
-                <tag name="routing.loader"/>
-                <argument type="service" id="assetic.asset_manager"/>
-                <argument type="collection"/>
-              </service>
-            </argument>
-          </call>
-          <call method="addLoader">
-            <argument type="service">
               <service class="Symfony\Component\Routing\Loader\AnnotationDirectoryLoader" public="false">
                 <tag name="routing.loader"/>
                 <argument type="service" id="file_locator"/>
@@ -1509,14 +1437,6 @@
         <argument type="collection">
           <argument>data_collector.router</argument>
           <argument>onKernelController</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListenerService">
-        <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument>assetic.request_listener</argument>
-          <argument>onKernelRequest</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -1672,7 +1592,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5c0a41d592d823.01149737</argument>
+            <argument>5ca5f5a02fa206.31038615</argument>
           </service>
         </argument>
       </argument>
@@ -1806,7 +1726,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5c0a41d592d823.01149737</argument>
+            <argument>5ca5f5a02fa206.31038615</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -1852,7 +1772,7 @@
           <argument>form_div_layout.html.twig</argument>
         </argument>
         <argument key="autoescape">name</argument>
-        <argument key="cache">/Users/yiming/popynov/var/cache/dev/twig</argument>
+        <argument key="cache">/Users/fadil/popynov/popynov/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
         <argument key="date" type="collection">
@@ -1912,7 +1832,7 @@
           <service class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
             <tag name="twig.extension"/>
             <argument>null</argument>
-            <argument>/Users/yiming/popynov/app</argument>
+            <argument>/Users/fadil/popynov/popynov/app</argument>
             <argument>UTF-8</argument>
           </service>
         </argument>
@@ -1993,38 +1913,6 @@
       </call>
       <call method="addExtension">
         <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Twig\AsseticExtension" public="false">
-            <tag name="twig.extension"/>
-            <tag name="assetic.templating.twig"/>
-            <argument type="service" id="assetic.asset_factory"/>
-            <argument type="service" id="templating.name_parser"/>
-            <argument>true</argument>
-            <argument type="collection"/>
-            <argument type="collection">
-              <argument>FrameworkBundle</argument>
-              <argument>SecurityBundle</argument>
-              <argument>TwigBundle</argument>
-              <argument>MonologBundle</argument>
-              <argument>SwiftmailerBundle</argument>
-              <argument>AsseticBundle</argument>
-              <argument>DoctrineBundle</argument>
-              <argument>SensioFrameworkExtraBundle</argument>
-              <argument>AppBundle</argument>
-              <argument>DebugBundle</argument>
-              <argument>WebProfilerBundle</argument>
-              <argument>SensioDistributionBundle</argument>
-              <argument>SensioGeneratorBundle</argument>
-            </argument>
-            <argument type="service">
-              <service class="Symfony\Bundle\AsseticBundle\DefaultValueSupplier" public="false">
-                <argument type="service" id="service_container"/>
-              </service>
-            </argument>
-          </service>
-        </argument>
-      </call>
-      <call method="addExtension">
-        <argument type="service">
           <service class="Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension" public="false">
             <tag name="twig.extension"/>
           </service>
@@ -2098,7 +1986,7 @@
     <service id="monolog.handler.fingers_crossed.error_level_activation_strategy" class="Monolog\Handler\FingersCrossed\ErrorLevelActivationStrategy"/>
     <service id="monolog.processor.psr_log_message" class="Monolog\Processor\PsrLogMessageProcessor" public="false"/>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>/Users/yiming/popynov/var/logs/dev.log</argument>
+      <argument>/Users/fadil/popynov/popynov/var/logs/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -2126,435 +2014,6 @@
     </service>
     <service id="swiftmailer.mailer.default.plugin.messagelogger" class="Swift_Plugins_MessageLogger">
       <tag name="swiftmailer.default.plugin"/>
-    </service>
-    <service id="assetic.filter_manager" class="Symfony\Bundle\AsseticBundle\FilterManager">
-      <argument type="service" id="service_container"/>
-      <argument type="collection">
-        <argument key="cssrewrite">assetic.filter.cssrewrite</argument>
-      </argument>
-    </service>
-    <service id="assetic.asset_manager" class="Assetic\Factory\LazyAssetManager">
-      <argument type="service" id="assetic.asset_factory"/>
-      <argument type="collection">
-        <argument key="twig" type="service">
-          <service class="Assetic\Factory\Loader\CachedFormulaLoader" public="false">
-            <tag name="assetic.formula_loader" alias="twig"/>
-            <tag name="assetic.templating.twig"/>
-            <argument type="service">
-              <service class="Assetic\Extension\Twig\TwigFormulaLoader" public="false">
-                <tag name="assetic.templating.twig"/>
-                <tag name="monolog.logger" channel="assetic"/>
-                <argument type="service" id="twig"/>
-                <argument type="service" id="monolog.logger.assetic" on-invalid="ignore"/>
-              </service>
-            </argument>
-            <argument type="service">
-              <service class="Assetic\Cache\ConfigCache" public="false">
-                <argument>/Users/yiming/popynov/var/cache/dev/assetic/config</argument>
-              </service>
-            </argument>
-            <argument>true</argument>
-          </service>
-        </argument>
-      </argument>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>FrameworkBundle</argument>
-                  <argument>/Users/yiming/popynov/app/Resources/FrameworkBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>FrameworkBundle</argument>
-                  <argument>/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>SecurityBundle</argument>
-                  <argument>/Users/yiming/popynov/app/Resources/SecurityBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>SecurityBundle</argument>
-                  <argument>/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>TwigBundle</argument>
-                  <argument>/Users/yiming/popynov/app/Resources/TwigBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>TwigBundle</argument>
-                  <argument>/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>MonologBundle</argument>
-                  <argument>/Users/yiming/popynov/app/Resources/MonologBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>MonologBundle</argument>
-                  <argument>/Users/yiming/popynov/vendor/symfony/monolog-bundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>SwiftmailerBundle</argument>
-                  <argument>/Users/yiming/popynov/app/Resources/SwiftmailerBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>SwiftmailerBundle</argument>
-                  <argument>/Users/yiming/popynov/vendor/symfony/swiftmailer-bundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>AsseticBundle</argument>
-                  <argument>/Users/yiming/popynov/app/Resources/AsseticBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>AsseticBundle</argument>
-                  <argument>/Users/yiming/popynov/vendor/symfony/assetic-bundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>DoctrineBundle</argument>
-                  <argument>/Users/yiming/popynov/app/Resources/DoctrineBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>DoctrineBundle</argument>
-                  <argument>/Users/yiming/popynov/vendor/doctrine/doctrine-bundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>SensioFrameworkExtraBundle</argument>
-                  <argument>/Users/yiming/popynov/app/Resources/SensioFrameworkExtraBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>SensioFrameworkExtraBundle</argument>
-                  <argument>/Users/yiming/popynov/vendor/sensio/framework-extra-bundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>AppBundle</argument>
-                  <argument>/Users/yiming/popynov/app/Resources/AppBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>AppBundle</argument>
-                  <argument>/Users/yiming/popynov/src/AppBundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>DebugBundle</argument>
-                  <argument>/Users/yiming/popynov/app/Resources/DebugBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>DebugBundle</argument>
-                  <argument>/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>WebProfilerBundle</argument>
-                  <argument>/Users/yiming/popynov/app/Resources/WebProfilerBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>WebProfilerBundle</argument>
-                  <argument>/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>SensioDistributionBundle</argument>
-                  <argument>/Users/yiming/popynov/app/Resources/SensioDistributionBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>SensioDistributionBundle</argument>
-                  <argument>/Users/yiming/popynov/vendor/sensio/distribution-bundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="collection">
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>SensioGeneratorBundle</argument>
-                  <argument>/Users/yiming/popynov/app/Resources/SensioGeneratorBundle/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-              <argument type="service">
-                <service class="%assetic.directory_resource.class%" public="false">
-                  <argument type="service" id="templating.loader"/>
-                  <argument>SensioGeneratorBundle</argument>
-                  <argument>/Users/yiming/popynov/vendor/sensio/generator-bundle/Resources/views</argument>
-                  <argument>/\.[^.]+\.twig$/</argument>
-                </service>
-              </argument>
-            </argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-      <call method="addResource">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource" public="false">
-            <tag name="assetic.templating.twig"/>
-            <tag name="assetic.formula_resource" loader="twig"/>
-            <argument type="service" id="templating.loader"/>
-            <argument></argument>
-            <argument>/Users/yiming/popynov/app/Resources/views</argument>
-            <argument>/\.[^.]+\.twig$/</argument>
-          </service>
-        </argument>
-        <argument>twig</argument>
-      </call>
-    </service>
-    <service id="assetic.asset_factory" class="Symfony\Bundle\AsseticBundle\Factory\AssetFactory" public="false">
-      <argument type="service" id="kernel"/>
-      <argument type="service" id="service_container"/>
-      <argument type="service">
-        <service class="Symfony\Component\DependencyInjection\ParameterBag\ParameterBag" public="false">
-          <factory service="service_container" method="getParameterBag"/>
-        </service>
-      </argument>
-      <argument>/Users/yiming/popynov/app/../web</argument>
-      <argument>true</argument>
-      <call method="addWorker">
-        <argument type="service">
-          <service class="Symfony\Bundle\AsseticBundle\Factory\Worker\UseControllerWorker" public="false">
-            <tag name="assetic.factory_worker"/>
-          </service>
-        </argument>
-      </call>
-    </service>
-    <service id="assetic.filter.cssrewrite" class="Assetic\Filter\CssRewriteFilter">
-      <tag name="assetic.filter" alias="cssrewrite"/>
-    </service>
-    <service id="assetic.controller" class="Symfony\Bundle\AsseticBundle\Controller\AsseticController">
-      <argument type="service" id="assetic.asset_manager"/>
-      <argument type="service">
-        <service class="Assetic\Cache\FilesystemCache" public="false">
-          <argument>/Users/yiming/popynov/var/cache/dev/assetic/assets</argument>
-        </service>
-      </argument>
-      <argument>false</argument>
-      <argument type="service" id="profiler" on-invalid="null"/>
-    </service>
-    <service id="assetic.request_listener" class="Symfony\Bundle\AsseticBundle\EventListener\RequestListener">
-      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
     </service>
     <service id="doctrine.dbal.connection_factory" class="Doctrine\Bundle\DoctrineBundle\ConnectionFactory">
       <argument type="collection"/>
@@ -2638,17 +2097,17 @@
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_07f1b8a2bb0604c8508122f38b252953770abd96601346d66b97d3e945a12742</argument>
+        <argument>sf2orm_default_69cfbba9b9a408ef44e540333dc2f419ffd6b3265739cdcba3fe7ce3aff3a23d</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_result_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_07f1b8a2bb0604c8508122f38b252953770abd96601346d66b97d3e945a12742</argument>
+        <argument>sf2orm_default_69cfbba9b9a408ef44e540333dc2f419ffd6b3265739cdcba3fe7ce3aff3a23d</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_query_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
-        <argument>sf2orm_default_07f1b8a2bb0604c8508122f38b252953770abd96601346d66b97d3e945a12742</argument>
+        <argument>sf2orm_default_69cfbba9b9a408ef44e540333dc2f419ffd6b3265739cdcba3fe7ce3aff3a23d</argument>
       </call>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\Bundle\DoctrineBundle\Mapping\ContainerAwareEntityListenerResolver">
@@ -2684,13 +2143,11 @@
               <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
                 <call method="addDriver">
                   <argument type="service">
-                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
-                        <argument key="/Users/yiming/popynov/src/AppBundle/Resources/config/doctrine">AppBundle\Entity</argument>
+                        <argument>/Users/fadil/popynov/popynov/src/AppBundle/Entity</argument>
                       </argument>
-                      <call method="setGlobalBasename">
-                        <argument>mapping</argument>
-                      </call>
                     </service>
                   </argument>
                   <argument>AppBundle\Entity</argument>
@@ -2699,7 +2156,7 @@
             </argument>
           </call>
           <call method="setProxyDir">
-            <argument>/Users/yiming/popynov/var/cache/dev/doctrine/orm/Proxies</argument>
+            <argument>/Users/fadil/popynov/popynov/var/cache/dev/doctrine/orm/Proxies</argument>
           </call>
           <call method="setProxyNamespace">
             <argument>Proxies</argument>
@@ -3008,18 +2465,6 @@
         <argument type="service" id="monolog.handler.debug"/>
       </call>
     </service>
-    <service id="monolog.logger.assetic" class="Symfony\Bridge\Monolog\Logger">
-      <argument>assetic</argument>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.console"/>
-      </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.main"/>
-      </call>
-      <call method="pushHandler">
-        <argument type="service" id="monolog.handler.debug"/>
-      </call>
-    </service>
     <service id="monolog.logger.doctrine" class="Symfony\Bridge\Monolog\Logger">
       <argument>doctrine</argument>
       <call method="pushHandler">
@@ -3035,12 +2480,12 @@
     </service>
     <service id="monolog.handler.null_internal" class="Monolog\Handler\NullHandler"/>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>/Users/yiming/popynov/var/cache/dev/sessions</argument>
+      <argument>/Users/fadil/popynov/popynov/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-      <argument>/Users/yiming/popynov/app/../var/sessions/dev</argument>
+      <argument>/Users/fadil/popynov/popynov/app/../var/sessions/dev</argument>
     </service>
     <service id="templating.loader" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\FilesystemLoader">
       <argument type="service" id="templating.locator"/>
@@ -3055,9 +2500,9 @@
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <argument type="service" id="service_container"/>
-      <argument>/Users/yiming/popynov/var/cache/dev/assetic/routing.yml</argument>
+      <argument>/Users/fadil/popynov/popynov/app/config/routing_dev.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">/Users/yiming/popynov/var/cache/dev</argument>
+        <argument key="cache_dir">/Users/fadil/popynov/popynov/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -3068,7 +2513,6 @@
         <argument key="matcher_dumper_class">Symfony\Component\Routing\Matcher\Dumper\PhpMatcherDumper</argument>
         <argument key="matcher_cache_class">appDevDebugProjectContainerUrlMatcher</argument>
         <argument key="strict_requirements">true</argument>
-        <argument key="resource_type">yaml</argument>
       </argument>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.router" on-invalid="ignore"/>
@@ -3084,7 +2528,7 @@
       </argument>
       <argument type="service">
         <service class="Doctrine\Common\Cache\FilesystemCache" public="false">
-          <argument>/Users/yiming/popynov/var/cache/dev/annotations</argument>
+          <argument>/Users/fadil/popynov/popynov/var/cache/dev/annotations</argument>
         </service>
       </argument>
       <argument>true</argument>
@@ -3183,38 +2627,38 @@
       <argument type="service" id="templating.locator"/>
       <argument type="service" id="templating.name_parser"/>
       <call method="addPath">
-        <argument>/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
+        <argument>/Users/fadil/popynov/popynov/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
         <argument>Framework</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
+        <argument>/Users/fadil/popynov/popynov/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
+        <argument>/Users/fadil/popynov/popynov/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
         <argument>Twig</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/yiming/popynov/vendor/symfony/swiftmailer-bundle/Resources/views</argument>
+        <argument>/Users/fadil/popynov/popynov/vendor/symfony/swiftmailer-bundle/Resources/views</argument>
         <argument>Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/yiming/popynov/vendor/doctrine/doctrine-bundle/Resources/views</argument>
+        <argument>/Users/fadil/popynov/popynov/vendor/doctrine/doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
+        <argument>/Users/fadil/popynov/popynov/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
+        <argument>/Users/fadil/popynov/popynov/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/yiming/popynov/app/Resources/views</argument>
+        <argument>/Users/fadil/popynov/popynov/app/Resources/views</argument>
       </call>
       <call method="addPath">
-        <argument>/Users/yiming/popynov/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form</argument>
+        <argument>/Users/fadil/popynov/popynov/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form</argument>
       </call>
     </service>
     <service id="session.storage" alias="session.storage.native"/>
